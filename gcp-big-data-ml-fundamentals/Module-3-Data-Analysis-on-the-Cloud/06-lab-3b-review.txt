@@ -1,0 +1,44 @@
+0:01
+So let's go back to our cloud console, click on the menu on the left hand side and ask for a DataProc cluster.
+0:10
+So there is DataProc and let say that we want to create a cluster and we can say I want to create a cluster. Let's make sure that's in the same zone as our Cloud SQL instance. So our Cloud SQL instance goes in us-central1a, let's make sure that this is the same zone.
+0:37
+Okay, if you want to verify what zone your Cloud SQL instances in, go back to Cloud SQL.
+0:48
+And notice that it is in us-central1. So that is the same zone that you want to create your DataProc cluster. And the reason you want to do this is to basically cut down on the communication overhead between your DataProc cluster and your Cloud SQL instance. So create your cluster and do it in us-central1. It doesn't matter which one of those us-central1 zones. So let's pick us-central1b and the machine type, I think that's fine. But no, our data set is small enough that we can create a master node with just two CPUs, worker nodes is only two CPUs and they're created.
+1:37
+And less than two minutes later, we should have our cluster ready to go.
+1:49
+Great, so now that the cluster has been created, we can now submit jobs to this cluster. To do this, let's copy, as before, our file, our code to GCS, to the Google Cloud Storage. So out here, we have our lab.
+2:16
+Okay, so there's sparkml and in there is the py spark program, train and apply that py. So what I'll do here is I will copy gsutil cp sparkml/* to my packet. In my case, that's gs://ml-autoawesome/sparkml.
+2:49
+And now that the file has been copied, we need this file to, actually I need to change the file a little bit. So let's change the file, train_and_apply.py, and you can use any editor that you want that you're familiar with, and we list the change to Cloud SQL instance IP address. So what is the IP address of the Cloud SQL instance? Again, we can go back, so let's do this in a new tab. So I'll make a new tab, go to console.cloud.google.com,
+3:35
+And go to my Cloud SQL instance. And again if you have multiple projects, make sure that you have the right one selected whenever you do any of your tab like this and note the IP address. So that's the IP address, and we'll come back here and change the IP address.
+3:59
+The database name is recommendation_spark CLOUDSQL, and the password. So I guess, you know what my password is, change it if necessary to be something that you know.
+4:13
+And this is the file that you want to copy over to cloud storage. So that has now been copied. The next thing that you need is that because this DataProc cluster needs to communicate with Cloud SQL, remember that when we did it even from Cloud Shell. We had to basically say here's my IP address, this is the one that's going to connect and add it to the authorized networks, so let's do this. And anything that you can do from the graphical user interface, that's what we did last time to add a network. We can also do in a scriptable way using the gcloud command. So that's basically what it's doing here. So if you look at authorize_dataproc, it's basically going through finding all of the machines. And for each one of those machines, it's getting the IP address, gcloud compute instances describe that IP address. And then having done that, it goes to gcloud sql and add those IP addresses as part of its authorized networks. So this is a combination of two commands. One, to get the IP address of each of the machines on the DataProc cluster. And another, to go to the Cloud SQL instance and add those machines as being authorized to connect to it. So let's go ahead and do bash authorize_dataproc.sh, and this is going to require some parameters. But if you can just type this, and it'll tell us what they are. So we'll need to supply the name of the cluster. And, in my case, that's cluster-1. That is the name of my cluster, cluster-1, and the zone is us-central1-b. So I'll copy that and that is the zone, and the number of workers is 2, so I'll do 2. And at this point, It's patching the Cloud SQL instance with these three IP addresses. So one is the master and the other two are the nodes. So these three machines would be able to connect to Cloud SQL.
+6:30
+So while that's going on, we can go to our Cloud SQL instance, go to Jobs and we can submit a job. Right, now that this thing is done, we can submit a job. And to submit a job, we want to submit it to cloud cluster-1. The job that we want to submit is a Python Spark job and we need to provide the name of the Python file. Remember that we copied it earlier. So let me look at what I copied it into, I copied it into gs://ml-autoawesome/sparkml. So that's basically the path. But of course, there is also the name of the file itself which is in sparkml.
+7:23
+And it's called train_and_apply.py. So I'll copy that, I'll paste it here. So there it is, that's the name of the file, MLGS, packet name sparkml/train_and_apply.py. And I have no properties, no labels, no arguments to my program. I just go ahead and submit it. And at this point, the job is being submitted and it will take a few minutes for this job to complete. So it's running right now, it'll take a few minutes to complete. So let's come back and look at the completed job.
+7:59
+If you get an error, then go ahead and look at the log message. You can always click on the name of a job, clone it. And having to clone it, you can basically go ahead and modify its parameters and resubmit. Right now, we can just look at the log messages going through. And then, now, there is our log and it says, what?
+8:28
+So it says that it's now predicted for user=0, predicted for user=1, etc. So we will get predictions for all of our users, and at that point the job will be done.
+8:44
+So again, it's predicting for user=27, 28, 29. We have, I think, 99 users. So it's basically going to go through all of those users and predict recommendations for all of them, and store those recommendations into the Cloud SQL instance. So once this is done, we can go back and look at the Cloud SQL instance to see what recommendations have been done for specific users.
+9:11
+So all of those predictions have been done. Job output is complete. You can also see this here, job output got completed in a minute and 46 seconds. So at this point we can go explore the results in the Cloud SQL instance. In order to do that, we want to authorize Cloud Shell, we want to deauthorize Cloud Dataproc and I have lab3a/authorize_cloudshell.sh. So we can just go ahead and do this, rather than walk through the GUI and point and click through stuff.
+9:45
+And at this point, it's going to remove the authorization for the DataProc cluster. So the DataProc cluster will no longer be able to connect to the Cloud SQL instance, it's more secure that way. Remember that these DataProc clusters just come up and go away, we'll have multiple people who might have access to these machines. So you basically want to keep the number of people who can connect to your database as minimal as possible. So this is a way to do this, but we'll also go ahead and authorize this particular Cloud Shell VM to access the database, so that we can do our MySQL.
+10:24
+Okay, so there's our mysql, the host, user and password. And I typed the password and now we're in. We use the database recommendation_spark.
+10:39
+And at this point, let's go ahead and look at the recommendations table. Remember that last time we did select * from recommendation? We had nothing.
+11:01
+Okay, but now we have a bunch of recommendations for a bunch of different users. Let's look at the recommendations for an individual user.
+11:19
+So now I'm selecting the user ID, the accommodation ID, the prediction and information about the house itself. From recommendation r and accommodation a where the accommodation ID is matched and the user ID is 10. So these are the five houses that we’re going to be recommending to this particular user. Let’s change the user and you will get a different set of recommendations. 

@@ -1,0 +1,36 @@
+0:02
+So now that we have created a cloud SQL instance loaded the data, the next thing that we want to do is to use Hadoop. Spark in particular to create recommendations. Now, There's been a rich open source ecosystem that's come around the big data space. Hadoop, which is the Canonical open source MapReduce framework that was created by Doug Cutting after he read the papers out of Google that talked about MapReduce. So essentially, Hadoop was written, it was to reuse Hadoop, even though you had some streaming packages and other things. The primary way in which you would use Hadoop was to write MapReduce programs in Java. This could get relatively verbose, so people looked for simpler ways to use Hadoop. And several simple solutions came about, simple, very powerful solutions came about. One was called Pig, and the idea behind Pig was that you hd a scripting language. And you would write your MapReduce programs in that scripting language. And it could be much higher level, it is almost like an ETL language, extraction, transformation, loading of data language. So you would say load data from here, do this counting, do that kind of different datasets, do joins, and then you would basically store the data back.
+1:30
+So Pig provided a very convenient scripting language, and once you wrote those scripts, those script would get converted into MapReduce programs, into Hadoop MapReduce programs, and they would get run on the Hadoop cluster.
+1:43
+Another simplification that came about was this idea that most of the time you are dealing with structured data anyway. And if you have structured data, what if you have a schema, then you associate that schema on top of your structured data stored on a distributed file system? In the case of Hadoop, you would store it on HTFS. So you would basically have your distributed file system, you would store it. And then you'd be able to basically do queries on your hive using Hive.
+2:17
+So those were two simplifications that came about. But now, modern day programs on the Hadoop ecosystem tend to get written in Spark. Spark is very fast, it's interactive, and it has a bunch of libraries that allow you to deal with SQL, streaming data, machine learning, etc.
+2:33
+So when people say that they're using big data on Hadoop, typically, they're talking about now they have Hadoop, MapReduce jobs, the low level ones. They may have Pig Scripts, they may have Hive statements, they may have Python Spark programs, Spark car programs, etc. So when Google says that we want to be able to take your Hadoop jobs to meet you where you are and to be able to run them on Google Cloud. We basically give you a way to run Hadoop, Pig, Hive, Spark, Presto, a variety of different Hadoop ecosystem things on the Google Cloud platform. And the way you do this is with Dataproc.
+3:20
+The Dataproc is Google managed Hadoop, Pig, Hive, Spark programs.
+3:27
+So, here, Dataproc is a cluster, right, so it's not just a question of creating a single machine.
+3:35
+Like as we did with MySQL when Cloud SQL. But this is over a cluster of machines that are automatically all set up. You have master nodes, you have worker nodes, you can set and all of those things. The creation of them is extremely simple and straightforward. You can get a Dataproc cluster up and going in less than two minutes, so that's great. You can also resize it. So you can have a Dataproc cluster, and you can say well, I want to add a few more worker nodes. I want to remove a few worker nodes, but keep the cluster up. And know that kind of resizing is extremely simple and very straightforward. At the same time, it's very familiar, because it is your Hadoop, Pig, Hive, Spark jobs, they work unchanged. If you want, You can have HDFS and you can have your data in HDFS on the Dataproc cluster and read from HDFS.
+4:29
+However, a better way to do this is to take advantage of the very nice integration that Dataproc provides with GCP.
+4:40
+What kind of integration?
+4:43
+Instead of storing your data on HDFS, you can store your data on Google Cloud storage. Now, what's the difference?
+4:54
+If you store your data on HDFS, you're basically taking your data, you're splitting it up into pieces, and storing it on the Dataproc cluster.
+5:04
+What that means, and this is probably what you're doing today if you're using HDFS, your cluster has to be up. Because if you delete your cluster, typically your data also goes away, and you can't do that. So you're paying for compute even though all you need is a storage.
+5:23
+But if you store your data on Google Cloud Storage, you get the huge advantage that your cluster life cycle and your storage life cycle are now separated. So you can have your data on GCS. Bring up a cluster, have it do a job, and then delete the cluster. So that's an important distinction. When you look at the cost of Dataproc, you should realize that you don't tend to keep a Dataproc cluster up and running 24/7 for months at a time.
+5:56
+Instead, you think of a Dataproc cluster as a job specific resource. Every job that you want to run, create a new Dataproc cluster. And when the job is done, delete it. But if your going to be deleting a cluster, you can't be moving data back and forth to it. And this is where storing your data on GCS is so powerful. You can store your data on Google Cloud Storage, and your data remains there. And they get, no, moved to the Dataproc cluster. And the reason that we can do this, again, comes down to the quality of the networking within the Google data centers. Make sure that you store your data on GCS, ideally in a single region bucket. And create a Dataproc cluster in that same region.
+6:46
+And then you don't have to keep your Dataproc cluster up and around for way too long. In addition, Dataproc works very well with flexible virtual machines. This is basically the preemptable VMs that we talked about. So when you create your Dataproc cluster with a bunch nodes, create a few of them that are standard virtual machines, and a lot of them that are flexible virtual machines. If you get those virtual machines, you basically save yourself a lot of money. If you don't, well, to bad, but you still got your work done as you would have normally gotten them done using the standard machines.
+7:24
+And in addition to all of that, you basically get all the advantages of running on the Google Cloud, in terms of security, in terms of automated cluster management, in terms of image versioning. To make sure that all of your versions of Hadoop and Pig etc, they all work very well together.
+7:43
+So bottom line, Dataproc reduces the amount of cost that you're putting in. It reduces your complexity. It let's you just create a job and run it without worrying about managing that infrastructure yourself. Think about a Dataproc cluster as something that's specific to just that job that you're actually executing. 

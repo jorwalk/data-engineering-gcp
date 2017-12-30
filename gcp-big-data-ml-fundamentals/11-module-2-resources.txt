@@ -1,0 +1,22 @@
+0:00
+So, before I leave you here, let's kind of take a look at a few of the resources. So there listed documentation for compute cloud.google/compute, it's on the computer engine, /storage is on the storage. And /pricing is on the pricing calculator. This is actually a pretty cool thing and something that you want to get very familiar with. So let's go ahead and go to the pricing calculator. And, the pricing calculator, so there's our calculator.
+0:35
+So let's go to the calculator.
+0:39
+And let's say that I have a workload that requires 15 instances for doing something that's a Linux thing, it's a regular VM. And the VM type is going to be in one standard for and it's going to use four SSDs and it's going to be running. I'll put that again. It's going to be running three hours a day for three days a week, and plan this is hard to estimate.
+1:21
+And this is going to cost us $381 a month at the time that it will be recording again. Now go back and check the pricing, pricing keeps changing. Usually, keeps dropping but just keep changing. And let say in addition to that we want on cloud storage, we want to store within a region and we want to store, let's say we want to store 100 terabyte of data. And we can add that to the estimate and that's basically what that's going to cost us.
+1:59
+In addition to the pricing, the other thing that I'm going to talk about here is something called the Cloud Launcher.
+2:05
+Remember that we decided that we're going to create a compute engine VM and be able to install software on it. Well, lots of times, the software that you want to install on a machine has already been installed by someone else. So let's say, for example, that we want to create Cloud launcher that has WordPress.
+2:30
+Okay, there it is, right? So here is a WordPress, click to Deploy. And we can say, I want to basically launch WordPress on Compute Engine. And that's basically going to give us single VM with WordPress already installed on it, and this is basically typically done by partners of Google that basically take a compute into VM and provide what's called a deployment manager script. This is just a configuration file, so you can use this to even customize you own virtual machines. So you could basically say, I'm going to create a virtual machine and install these pieces of software and do this installation steps. And that's basically what my deployment script is. So what's being used for the Cloud Launcher can also be extremely helpful if you're doing your own.
+
+Resources
+
+Compute Engine: https://cloud.google.com/compute/
+Storage: https://cloud.google.com/storage/
+Pricing: https://cloud.google.com/pricing/
+Cloud Launcher: https://cloud.google.com/launcher/
+Pricing Philosophy: https://cloud.google.com/pricing/philosophy/

@@ -1,0 +1,51 @@
+In this lab, we are continuing with the Compute Engine that we created earlier. So we have Git installed and that's what we did last time. So let's go ahead and git clone, The repo for this class. https://github.com/GoogleCloudPlatform/tr- aining-data.
+
+There we go, and now we have our,
+
+So there we hope that we are now in the class directory. And we're now doing lab2b.
+
+So at this point, we would like to run this program transform.py. But transform.py requires a few Python packages to be installed. For example, it wants matplotlib, it wants basemap, it wants numpy, etc. So, the way we have to do that is that we'd have to install a bunch of packages. In particular we need to install Phyton basemap, numpy and matplotlib. And this is basically done with with apt-get. So, let's go ahead and do bash install_missing.sh. And at this point, all of those missing Python packages are going to get installed.
+
+So those have been installed and at this point, let's go ahead and ingest the earthquake data. Ingesting the earthquake data is simply a matter of calling wget, and invoking this particular URL. Now this is something that you could even do from your browser. So let's go ahead and look at what that would look like. I'm going to go to my browser, paste that URL. And there it is, there is my CSV file. This is basically the file that I'm going to get but I'm going to get this on the cloud. I'm going to get the time, the latitude, the longitude, the depth of the earthquake etc etc. So let's go ahead and do this.
+
+Okay.
+
+Bash ingest.sh, and at that point we now have,
+
+An earthquakes.csv which is the very first file, the file that we just got. And if we look at the first few lines of earthquakes.csv, we'd see that it has the header and so there was an earthquake in Kenai, Alaska and in Running Springs, California recently, for example.
+
+So now we have our earthquakes.csv but that's just a CSV file. What we really want is that we want a map. And to do the map, we're going to be running the transform.py. And what transform.py does is that it parses the earthquake data. And then it basically puts in a marker that basically depends on the magnitude of the earthquake. And then creates a PNG, an image file out of it, using the basemap capability in Python. So let's go ahead and we do python transform.py.
+
+And at this point, there's a new file which is earthquakes.png. And earthquakes.png is basically the map. And so let's go ahead and take these files, all the three earthquakes files.
+
+So ls earthquakes.*, there are three earthquakes files. Let's just go ahead and copy them to our bucket. In order to do that we need to create our bucket and so we would go to Cloud Console and go to the Storage area.
+
+So there is storage and I have a bunch of buckets already but you can always go ahead and create a bucket. And at this point I can basically try to create a bucket and if it already exists, now, GCS is going to tell us, hey, this bucket name is already in use, pick something else. So, I could pick that as a bucket name for example and I could create the bucket. And when I create the bucket, I can choose this is basically where the zone and regions and all that come in. I can say that this needs to be globally accessible or just within a single region.
+
+But I don't need to create a bucket because I already have that bucket. So what I'll do here is that I will go back and just copy that data. So gsutil cp earthquakes.* gs://cloud-training-demos/earthquakes/.
+
+Right, so I could do that and it will copy all of them. But a good practice here is to do this in a multithreaded way. So I'll add a -m, my m is for multithreaded. I'm going to be copying three files, it maybe nice to have them done in parallel. So gsutil -m cp earthquakes.* gs://cloud-training-demos/earthquakes/. And at this point, right, notice that all the three files are getting copied at once and the three files are up there. I can now go to my browser.
+
+And in the earthquakes, there are three and that it's 12:39 now, it's 12:39 that I copied those three in. Those three files right now are not accessible by anyone else. So if I were to go ahead and try to access this page. Okay, let's see. Okay, so let's go ahead and now share these three things publicly.
+
+So let's go ahead and share them publicly. And now I have a public link. And that public link is storage.googleapis.com. That's always the case, and cloud-training-demo, that's my project. And then the rest of it is a place where those files, the name of the blob, if you will. So, earthquakes/earthquakes.htm. And notice that, now, we have, these are the earthquakes that happened last week around the world.
+
+So at this point, we don't need this Compute Engine instance anymore. We're done with it. So we can go back to the GCP Console, to our Compute Engine.
+
+And I can click on this and I can delete it. But in addition to deleting it, I can also do what's called stopping the instance, what this does is that I'm not paying for the compute of that instance anymore. There's still the disk charge that I'm paying but everything that I've installed on the machine etc will still be there. So I can always stop the instance and then start it back up again. So, for example, I can hit stop here and at that point, the instance is basically spun down and put into hibernation.
+
+I'm not going to be using that instance, but if I need it, I can basically say start. But in this case, we're not going to need it anymore. So I'll just go ahead and delete it. So delete this instance And we're done.
+
+Now, If you think back to what we did here. The only reason why we created this Compute Engine instance was to be able to do some very minor things. Like gsutil copy and a few Python programs. It's really wasteful to go ahead and create a brand new virtual machine just to do something this simple. A better way to do this would have been to use Cloud Shell. And you can get Cloud Shell by clicking on this arrow on the GCP Console. So click on that arrow where it says Activate Cloud Shell. So I do that and at this point, the the bottom of your window, you will get Cloud Shell. And Cloud Shell is getting provisioned.
+
+And I'm going to be getting a Cloud Shell. And Cloud Shell is a virtual machine. It's a micro VM. It's free at the time that I'm recording this. Cloud Shell is free. And you basically have a virtual machine.
+
+And here is a cool thing.
+
+Once I have my virtual machine, I'm going to type ls.
+
+And notice that I already have stuff present. Why do I have stuff already present? This is unlike the Compute Engine, where, when I create a Compute Engine, it was completely empty. Here what I'm getting is quote unquote my home directory on the cloud. So everyone gets five gigs of space. So you can basically have a home directory on your cloud with commonly used scripts and repos etc. Now this thing already has Git installed. So unlike a Compute Engine, now, we know that this is used for development. So Git's already installed as is GSUtility.
+
+Okay, as is G-Cloud, okay? So, all of these things are already installed, Python is already installed. So, that makes it very convenient to do very quick things with the cloud, you don't have to go ahead and launch a new VM. Now, this particular VM is around only for the duration of this browser window. If I close the browser window, the VM goes away.
+
+And it's a micro VM. So it's not something that you want to use to do large scale processing but it is what you could use to act as your commanding console, right? This a place from which you can launch a whole bunch of server-less operations that all get autoscaled. And Cloud Shell is a pretty good place to basically keep all of your launch scripts etc. So you can basically launch them knowing that you have all of the cloud commands and etc available. And more to a point, this is behind the Google firewall. So it's all in the GCP Cloud and you can take advantage of the speed of networking that you get within the cloud.

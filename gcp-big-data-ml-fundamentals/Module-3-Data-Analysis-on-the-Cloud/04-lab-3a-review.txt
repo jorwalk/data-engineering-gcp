@@ -1,0 +1,56 @@
+0:01
+To set up rental state on Cloud SQL, let's go to console.cloud.google.com. And once we're in the console, let's click on this menu on the left-hand side and scroll down to SQL. And this brings up the Cloud SQL area, and we're going to be creating an instance. So click on Create Instance, and let's choose the Second Generation Instance And give it 10 instance ID, and the instance ID that we want to give it is rentals. And pick a location, you're central one is as good as any. And let's keep those defaults and go ahead and create it.
+0:57
+It's going to take a couple of minutes, but this rental instance will get created and we will have a Cloud SQL machine up and ready to go. And once we have the Cloud SQL machine, the first thing that we'd want to do is to create a database on it and put some tables on it. To do that, we will use files that have already been staged on Google Cloud Storage. So let's go look at where those files are.
+1:32
+So let's go ahead and do this way.
+1:39
+So at this point, once you get this green bar, it means that the rentals instance has been created. And in order to interact for this instance we will Cloud Shell, so go over to this area, activate Cloud Shell and wait for this Cloud Shell instance to get provisioned, remember that Cloud Shell is a micro VM and it's available for the duration of the browser window. So we are here and if you haven't done this earlier, go ahead and get Clone Training Data Analyst.
+2:15
+So, there is Training Data Analyst. In my case, it already exists. So I can go into training-data-analyst and there, cd 2 DPat. That is corresponds to this lab and let's go ahead and do this and.
+2:40
+So once we are in Cloud Shell, let's go ahead and find the files that we will use to create the tables. The first file is the tablecreation.SQL. So let's go ahead and look at tablecreation.SQL. You notice that this is just a standard.SQL file. Create a date base if not exists reccomendation_spark, so that's the name of the database, and then in that database we're going to drop a table and then create a table which is Accommodation, Rating and Recommendation. So those are the three tables that we're going to be creating, Recommendation is slightly below this. And Accommodation table has these columns, ids, title, location, price, rooms etc. So this is the standard data SQL file, so now that we have this file, and we also have accommodation.csv which consists of the data that we will need, And rating.csv which consists of the rating data. So, we need to use this data to load it into the cloudsql instance. And the way you do this is, you first stage it onto Google Cloud Storage.
+4:01
+So lets go ahead and do this. In my case the bucket name,
+4:12
+Is called ML-awesome. So that is basically going to be my bucket name. So I'm going to do a gsutil cp, so that's b at one level higher and we do gsutil cp cloudsql/* and we'll copy it to gs://ml-autoawesome, which is the name of the bucket, and give it that.
+4:51
+And the files have now been copied. And at this point, we can go back to our Cloud SQL area.
+5:05
+Go to our rentals.
+5:10
+And say that we want to import files. And the import files, we're going to be importing from cloud storage and let's go ahead and browse, go to the files that we just copied.
+5:25
+And in ml-awesome there is cloudsql, and there is a table_creation.sql. So let's do that first and Import it.
+5:40
+And at this point you can see this working, meaning that this is getting imported and it's been done. So import data into cloudsql instance rentals, that's completed. The next thing that we want to do, is to go ahead and import the next file. So we can continue doing this, let's Import the data file this time. And the data file that we want to report, and the order here is important because some of the data relies on other data. So let's go ahead and go through it in the right order.
+6:39
+Let's go ahead and get the accommodation data. So ml-awesome cloudsql. There's our accommodation.csv.
+6:50
+And it's a CSV file. We need to know the database. Recall that we have the database name when we create the tables, so we can do less cloudsql/table_creation.sql and we know this is the database name. I'm going to copy it, paste it. And the table name for accommodation is Accommodation. So that's that Accommodation, that's the name of the table. So I'll paste the table name, and I will say Import.
+7:27
+So let's go ahead and import. So that also succeeded, we can now go ahead and import the next thing. So go to ml-awesome to cloudsql. And this time, it's a Rating file.
+7:42
+And that also is a CSV, this is also in the same database, but this time the table name is Rating.
+7:52
+So we will do this Rating table and we will Import it. So, let's kind of think back about the two data sets that we have imported. One data set consists of all of our products, the Accommodations, the houses that our company has listed on our website, for example. And the other consist of our Ratings. So these are when users come and they rate a particular house, we store their Ratings. So that's the two data sets that we have. The third table, the Recommendation table, currently it's empty. It's empty because we haven't run our Recommendation machine learning system yet. But what we do have is that we've collect the data, the data that we've collected corresponds to the houses that we have and to the ratings that our users have given to our houses. Let's go ahead and explore this database. This is MySQL database. So you interact with it the way you normally interact with MySQL. If you have MySQL clients, you can run them. In our case, I'll just go ahead and use MySQL. So let's use a command line tool that comes with the database.
+9:34
+In order to do this, because I need to connect it from the cloud shell instance. I need to know the IP address of the cloud shell instance. And so what we're going to do, the IP address of the cloud shell is essentially the address that the cloud shell instance. Says that it is to anybody that it connects too. So let's go ahead and run find_my_ip.ah and from that, we learn that that is the IP address of this particular cloud shell instance. This is going to change, every time you create a new cloud shell instance, it's going to have a different IP address. But for now, let's go ahead and in this rentals instance, let's change the access control and Add a network, and say that this is my cs, and that is the IP address that we want it to be able to connect. This is not yet saved, so let's go ahead and click Save to save the new network that's now authorized.
+10:38
+And at this point, we should be able to connect to cloud shell.
+10:58
+In order to connect to cloud shell, in order to connect to cloudsql, we need to know the IP address of Cloud SQL. You can find the IP address by going to the overview, and scrolling down, and there is the IP address of cloudsql. So from my shell, I'm going to connect to mysql. To do that I would do mysql --host = that, and.
+11:39
+So I would do host= that, and I would like to basically connect with the user-root.
+11:47
+And provide a password. But I haven't set the password yet for cloudsql, so let's go ahead and do that next. So let's go to Access Control, to Users.
+12:02
+And let's Change the password of the root. And I'll give it some password.
+12:11
+That I remember. And at this point, the root passport has been changed to something that I know what it is.
+12:33
+So now that the password has been changed, I can say mysql connect to it, it asks me for the root password, provide that same password, and I'm in. So I'm right now inside the mysql shell, and I should be able to use my recommendation_spark database, and do queries on it. So let's go ahead and do a query.
+13:06
+In order to do a query, we need to know the names of the tables so we can say show tables, and there we have our Accommodation table, Rating table and Recommendation table, although we know that the Recommendation table currently is empty. We can check that. We can say select * from Recommendations, which I don't trust myself to type so I'll just copy and paste. And it's empty whereas, if I did select * from Accommodation. These are a houses, and we should have it quite a few more. So those are we have about 100 houses, 99 rows that we got back. Similarly, we can do select * from Rating ,and we have about 1200 ratings. These are all of our users and what they've rated the houses. So this is basically going to be a training data set. It's a small data set, but it gives us an idea of how Recommendation agents can be tripped. So you need a data set that's pretty straightforward. You basically [INAUDIBLE] a rating stable, that's pretty much all you need. And you need to have a User ID, a Product ID, and a Rating. You have those three columns, you can get going.
+14:31
+So let's go ahead and do a slightly more complex query. Select * from Accommodations, where the type is 'castle' and price is <1500, and we get about five houses that made this criteria. And when we are done, we can take quit and we're out. So at this point, what we've learned is we've learned how to create mysql instance on Google Cloud Platform, load it with data, and connect to it. And as you saw, it is essentially very familiar. This is exactly the way you would connect to a mysql instance, regardless of where it's running. The advantages are, that this MySQL instance is fully managed by Google Cloud. It's quite easy to get a new instance up and running, to change the type of instance, to stage data onto the Cloud, add new data sets, etc.

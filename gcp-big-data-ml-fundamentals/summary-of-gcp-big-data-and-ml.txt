@@ -1,0 +1,14 @@
+In summary then, we've looked at google infrastructure. We basically looked at how google provides global infrastructure in terms of global data centers at global network, Edge locations in a variety of countries, software-defined networking and so on, such that you can build applications similar to the way we do, used on the GCP platform.
+
+And we talked about how the Cloud is evolving, where you may have been doing everything on location, on-premise, and migrated to a virtualized data center. And if you're using Cloud at the level of provisioning virtual machines, and spinning up a VM every time you need to run a job, you're essentially doing the second wave of cloud, but you're still managing these virtual machines, this infrastructure. And in this course we can encourage you to look beyond managing your own machines to this third wave of completely elastic, automated services and scalable data. The idea being, whether you are writing SQL queries or BigQuery, or data pipelines or data flow, or you're doing machine learning, models with Cloud Machine Learning, you are using no ops auto-scaling services on GCP, so that you are focused on the business applications, and Google's focused on the infrastructure.
+
+So the point of this is that typical big data processing involves programming, provisioning resources, handling growing scale, working on how to manage reliability you're deploying, configuring, looking at how much of your machines are getting used, figuring out how to optimize the use of those machines, looking at tuning off the performance, monitoring these machines, and in the time that you have left, creating new features and programming new things. On GCP though, working with Big Data is programming. This helps you focus on insight, not on managing and provisioning infrastructure.
+
+So in summary, GCP offers you ways to spend less on ops and administration, incorporate real-time data into apps and architectures, apply machine learning broadly easily, and as an end goal, create citizen data scientists, so that everybody in your organization can work with data. That should be your goal and that's something that GCP can enable for you.
+
+
+Big data and machine learning blog: https://cloud.google.com/blog/big-data/
+
+Google Cloud Platform blog: https://cloudplatform.googleblog.com/
+
+Google Cloud Platform curated articles: https://medium.com/google-cloud

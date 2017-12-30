@@ -1,0 +1,31 @@
+So let's start off by looking at how to do a relational database in the cloud. Okay, so as we mentioned, the data that we have is relatively small, a few hundred gigabytes maybe, maximum. So that's the kind of thing that Cloud SQL handles perfectly well. So we would use Cloud SQL. The capacity of a gigabyte is fine for a relational offering. You use it like a relational database. You do selects, you do inserts. You do updates, you use deletes. And you can update an individual field. So that's what Cloud SQL is. 
+
+Later on we'll look at other access patterns that you could use if you needed to go at larger scale or we want to basically deal with objects rather than relational data. What if we need to deal with high throughput? What if we need to deal with petabytes of data and still get very quick, timely responses? But right now based on our access pattern of relatively small data that we want to use in a very familiar way, Cloud SQL is great service.
+
+So Cloud SQL is essentially MySQL. MySQL is an open source database and Cloud SQL is Google-managed MySQL. At this point you've got to be wondering, wait a minute, in the last chapter we looked at Cloud Launcher. And if I wanted to run WordPress on Google, I could just go to Cloud Launcher and get a Compute Engine VM that's pre-installed with WordPress ready to go.
+
+Why can't I do that with MySQL?
+
+Why does Google have to manage MySQL?
+
+Isn't it just getting a Compute Engine VM and installing MySQL on it? Well, not quite. By having Google Cloud manage MySQL, we get a few extra benefits. First benefit, flexible pricing. One of the things that you could do is to say, well, I have this database and it's going to be used only between 9 and 5. So between 5 and 9 just passivate the database. And then so you don't have to pay for it when it's passivated, so that's great.
+
+So and that's something that you can just have Cloud SQL do for you. You don't have to write any extra infrastructure handling to passivate the database when you're not using it. So this is particularly useful for things like tester databases. A database that needs to be run only when a unit test is running. If a unit test isn't running, we don't need the database, we don't have to use it.
+
+Second advantage, it's familiar. It's MySQL and so every workload that you have that uses MySQL,
+
+it's a prime candidate to run on Cloud SQL.
+
+But we're talking about the advantages that running it on Google can give your relational database workloads. So first of all, is that flexible pricing. You don't have to pay for a machine if you aren't using it. And this is particularly useful for machines that aren't used 24/7. Secondly, Google manages the backups so you can just go to Cloud SQL and say I would like you to back up this database every Thursday at 2:00 AM and it will happen.
+
+Thirdly, you can connect to it from anywhere. It's on the Cloud so you don't have to worry about your company firewalls and things like that. You have a database that needs to be connectable from anywhere.
+
+This is a good solution for it.
+
+You get automatic replication if you need to.
+
+You also get very fast connections from GCE, Google Compute Engine, and GAE, Google App Engine. Why is that?
+
+Well, because Cloud SQL is on a machine that lives in Google Cloud, and all these things are also in Google Cloud. So as long as you're running these apps in the same region,
+
+they get to take advantage of Google's petabit per second interconnect networking. And that by section bandwidth off 1 petabit per second. So that's extremely, extremely fast. And so you get really fast connections between MySQL and other applications that are running on Google Cloud. And finally, not the least, is this idea that you have Google Security taking care of your instances. So you're not at the mercy of a randomly rotating set of security people. You basically have it being secured by people who do it as their job day in and day out.

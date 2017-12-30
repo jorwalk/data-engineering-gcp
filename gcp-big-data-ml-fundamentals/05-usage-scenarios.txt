@@ -1,0 +1,27 @@
+As examples of some of these usage scenarios, let's take an example here.
+
+>> I grew up just absolutely loving movies. My first movie that my dad took me to was ET. And I had a popcorn bucket like up to here. I could barely see over it.
+
+Really the thing that got me into visual effects is how it is a blend of artistry and technology. We create an illusion that transports people into a different place.
+
+In 2010, we created Atomic Fiction, which is a visual effects and animation studio. One of the most challenging parts of doing visual effects is called rendering. That process can take anywhere between two minutes and 40 hours, for every single frame, every 24th of second of a film.
+
+Rendering takes an immense amount of computing horsepower. Using Google Cloud Platform to do our rendering, we have massive infrastructure offsite when we need it, and then nothing when we don't. It allows us to use computers for minutes at a time and only get billed for what we use. And so we took that as an opportunity to create our own toolset, more specific to our industry, called Conductor, which runs on top of Google's Cloud Platform. It helped us put the resources on where it was important, the artist, and making sure that every penny that our client spent made it up on the screen. These movies, that might have otherwise been bottled up in a filmmaker's mind, are now actually seeing the light of day on the movie screen. There's no greater satisfaction than creating a visual effect, that people just believe that they're somewhere else. [MUSIC] That's what we do, is we create fiction. Hopefully, it's just the most believable fiction that you can imagine. [MUSIC] >> So that's an example of someone who's changing where they compute. So it is the same rendering software that needs to run to create these movies. They could have done it on premise, but instead they did it on Google Cloud, because it allowed them to get a lot more machines, get it done faster, and get it done cheaper.
+
+As an example of the second thing, which is of how Google Cloud gives you the ability to do reliable and scalable processing of data, take this company called FIS, that needed to basically process the consolidated audit trail. This is every security trade that happens on a US stock exchange. And they needed to basically process it to find things, to basically find events on an entire life cycle. And the kind of data that we're talking about here, is six billion market events per hour.
+
+That's on average, ten billion per hour at a burst, 1.7 gigabytes a second, 10 terabytes an hour. This is humongous amounts of data that need to get processed. And how much of it can be lost, discarded?
+
+None, this is financial data, it's literally money.
+
+So if you need to process this kind of data at scale, very, very, very reliably, Google Cloud is a place to do it. And in this case, FIS used Bigtable to process and run queries.
+
+The third use case that we talked about is a transformational use case. And of course, when we take transformation, we tend to think of all of the digital natives, which is why I love this use case. This is a company called Rooms To Go, a furniture retailer.
+
+Not maybe the first company that comes to mind, when you think about machine learning. But what they decided, was that they would basically go ahead and mash up their customer relationship data, based on who had bought what, and combine it with their website, basically looking at what new pieces are being looked at, etc. And using that combination, they could basically go ahead and create completely redesigned room packages and offer it to their customers
+
+So in summary, then, GCP gives you ways to spend less on ops and administration, because we've automated out a lot of the complexity that's involved, if you're building and rolling out your own infrastructure. The second thing that Google gives you, is the ability to do real-time apps and architectures and to do things faster, get to market faster.
+
+Third thing, is the transformational aspect of machine learning.
+
+We give you a lot of machine learning capabilities, to be able to apply ML broadly and easily. And finally, the goal of all of this is such that everybody in your company is capable of deriving insight from data. So the goal here is to transform from your organization into a data-driven company, such that if someone needs to make a data-driven decision, they are not waiting for this data to become available. That data is there at their fingertip, for them to be able to make the decision to move your company forward, for your company to become more agile, and GCP is a good way for you to do that

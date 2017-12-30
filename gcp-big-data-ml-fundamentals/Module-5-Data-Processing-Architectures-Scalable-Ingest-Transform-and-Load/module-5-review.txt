@@ -1,0 +1,7 @@
+So quick module review. We looked at two use cases, the way to decouple producers and consumers of data in complex systems in larger organizations is Pub/Sub. And the way to create scaleable, fault-tolerant multi-step processing of data is Cloud Dataflow. I know we've gone through these very quickly. We just talked about the system architecture. Come take the data engineer course, and you'll be able to get deeper hands-on experience with both of these products.
+
+Cloud Pub/Sub: https://cloud.google.com/pubsub/
+Cloud Dataflow: https://cloud.google.com/dataflow/
+Reliable task scheduling on Google Compute Engine: https://cloud.google.com/solutions/reliable-task-scheduling-compute-engine
+Real-time data analysis with Kubernetes, Cloud Pub/Sub, and BigQuery: https://cloud.google.com/solutions/real-time/kubernetes-pubsub-bigquery
+Processing logs at scale using Cloud Dataflow: https://cloud.google.com/solutions/processing-logs-at-scale-using-dataflow

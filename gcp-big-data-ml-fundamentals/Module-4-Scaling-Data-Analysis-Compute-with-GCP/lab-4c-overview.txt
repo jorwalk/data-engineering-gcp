@@ -1,0 +1,32 @@
+0:00
+So let's look at how to use the ML APIs.
+0:04
+And the ML APIs are also in DataLab. Let's go into DataLab CPB100, go to lab4c, and look at the ML APIs in our iPython notebook.
+0:21
+And let's do the same trick of clearing out all the cells.
+0:28
+And visit the API console.
+0:42
+So visit the API console, make sure that you're in the right project here.
+0:48
+And once you're in the API console, choose Credentials on the left hand menu, so there is a Credentials and let's go ahead and delete this key.
+1:00
+I'm just going to delete it. And let me create credentials and what I'm going to create is an API key and that's my API key, I can copy it Okay, so there's my API key and what we can now do is to go back into this notebook and paste that API key. So I'll paste the API key and now I can Shift + Enter to run that.
+1:27
+And at this point, let's go ahead and get the Google API Python client and this basically gets the Google API Python client. And once this is done, because we've done pip install, we have to restart Python. And the way you'd restart Python is to click on Reset Session. But let's wait for this thing to be done. So now the pip install is complete. Let's reset session, to restart Python, and let's do the API key again.
+2:01
+And this time when we do pip install,
+2:09
+Okay, we should see the requirement is already up to date, everything is already installed. So now we can go ahead and invoke the translate API. So the what we want to do is we have a set up input, is it really this easy? Amazing technology, wow, those are three strings. Their source is English I would like to translate them into French and I'll print them out. So go ahead and do this, okay. So there it is, is it really this easy blah. Let's change this from French to Español.
+2:46
+And so [INAUDIBLE]
+3:11
+So, let's change it from French to Español and run it. And there, now we have our translations in Español. So this is as easy and let's go ahead and add an extra, wow this is cool, and run this again. And the wow, this is cool, is wow esto es fresco.
+3:33
+So let's say we have an image, and here's an image, I've already put it on cloud storage as gs://cloud-training-demos/vision/sign2.- jpg. So that's the sign, and what I'm going to do is I'm going to say here's where it is on GCS. I would like you to detect text in it and show me like three results. And I can do this. I can hit Return. And I can get back, okay, the responses and notice that this is the JSON response. So I can basically go ahead and clear all this out. So let's go ahead and Run this,
+4:20
+And you see that we get back a JSON response. We can take that JSON response, we can say responses, responses of 0 which will be the first one, yet detects annotations, get first one of those, get their description. And now let's go ahead and print the description in the locale, and the locale, the foreign language is zh, and that is the text. So, let's go ahead and take that foreign language and the foreign text and pass that into the translation service and say, translate that foreign language to English, whatever that is. And when we do this, we basically get the corresponding English text for the original Chinese.
+5:01
+Next API that we want to look at is a language API. So we basically have a bunch of text. So these are a bunch of very famous quotes. And we basically say, for each of those quotes, go ahead and print out the polarity, and print out the magnitude. Now polarity is, is it negative, is it positive, the sentiment. The magnitude is how many positive words and negative words there are. So the longer the text is, the bigger the magnitude typically is going to be. It's going to tell you how emphatic that particular text has been. So let"s go ahead and run this. And we see that, now for something to succeed you must have tremendous perseverance and tremendous will. The polarity is 1 ,that is very positive message and the magnitude is 0.8 it's quiet high. On the other hand for something like, for what difference does it make dead, the orphans, and the homeless, right, that is a pretty negative sentiment. And it's not, even though it's there it's not a very emphatic statement, this is a very defeated statement. What difference does it make to the dead, etc, right, the magnitude is actually kind of low. Take for example, love is of all passions the strongest, polarity is 1, Magnitude is 0.8. So you can see that given some text you can get both of those things, how positive is it and how emphatic is it. The next thing that we want to look at is that we have some audio that I've uploaded to the cloud, audio.raw. And we can say go ahead and tell me what text there is in that audio.raw. What we're going to get back when we do this processing is that we're going to get back a JSON response.
+6:54
+Okay, so we got back the JSON response and now I'm parsing it, I'm saying get me the results, the first result, the alternative, the first alternative and the transcript. So now I should get back how old is the Brooklyn bridge and then right, we can say what's the confidence that the text is actually reflective of the sound and the confidence will be 0.98. So it is pretty sure that those were the words that were being spoken. So at this point now we've done it. Let me go to the API console. And before I forget, because this is all on video, I don't want you guys all using my API key, let me go ahead and delete it. 

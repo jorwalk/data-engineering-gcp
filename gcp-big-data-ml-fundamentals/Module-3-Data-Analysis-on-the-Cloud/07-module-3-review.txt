@@ -1,0 +1,24 @@
+0:00
+So let's do a quick module review. Relational databases are a good choice when you need which of the following? Streaming high-throughput writes, no. What about this is problematic for relational databases?
+0:18
+It's the high through-put. Relation databases may not be able to support very, very high through-put, I mean again, it depends on the through-put that you care about, but because they're transactional, rights tend to be relatively slow. Compare to storage mechanisms that don’t try to manage transactions.
+0:40
+Second, fast queries on terabytes of data.
+0:45
+Now, the problem here is terabytes, it's this quantity. Relational databases scale pretty well to a few hundred gigabytes, but not more than that. And even at a few hundred gigabytes, you start running into problems of scale.
+1:01
+Third, aggregations on unstructured data. No, the problem here is unstructured. Aggregations are no problem. We can do sum, we can do average, we can do count. Those are all very standard SQL key words. The problem is unstructured. You cannot do a column of pixels in an image using a relational database. That's just it's not an appropriate use of relational database.
+1:30
+Transactional updates on relatively small datasets. Absolutely. The reason you want to use a relational database is if you need transactions and if you create datasets are a few hundred megs to a few gigs that's like the sweet spot for a relational database. It's perfect to use for that and that's a huge fraction of your use cases but you want to be aware of the exceptions, the cases were relational databases may not be the best choice. If you have high true put, if you have terabytes of data or if you have unstructured data. For those cases, we will talk about alternatives in the next chapter.
+2:16
+Next question, Cloud SQL and Cloud Dataproc offer familiar tools. MySQL, in the case of Cloud SQL.
+2:26
+Hadoop, Pig, Hive and Spark in the case of Cloud Dataproc. So what's a value-add Provided by GCP.
+2:35
+A, it's the same API, but Google implements it better.
+2:39
+No, it's the exact same code. In fact, if we find improvements, we basically go back and check them in back to the original open source code base. So it is the exact same code. We're not making any changes. So that answers the second question too, there are no Google proprietary extensions. If there are bug fixes they go back into the main branch.
+3:03
+Third, fully managed versions of the software offer no-ops, absolutely. So you basically get fully managed versions of MySQL of Spark that just run on the Dataproc cluster. You don't need to install anything, you don't have to worry about managing those kinds of infrastructure, that's all taken care of for you.
+3:25
+Google infrastructure offers reliability and cost savings. Absolutely. As we talked about. For example and this is very relevant in the case of something like Dataproc. The way you approach Hadoop and Pig and Hive jobs changes as soon as you think about putting your data on cloud storage. And reading it from your Dataproc instance. 

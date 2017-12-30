@@ -1,0 +1,8 @@
+0:01
+So we've looked at a variety of transformational technologies in this chapter. So let's quickly go through and review them. So let's match the use case on the left with the product on the right. So if we want to search for objects by attribute value, which of these things will we use? Well, we are searching for objects, so it should be one of the data technologies. So is it BigTable, or is it Datastore?
+0:30
+Well, because you're searching for attribute value, it has to be Datastore. Remember that BigTable, you can only search by key. High-throughput writes of wide-column data. Well, that is BigTable, right, because it's supporting high-throughput writes. Warehousing structured data. So what's the data warehouse technology on Google Cloud? That's, which one, BigQuery. To create and test new machine learning methods. Well, if you're writing new machine learning methods, then TensorFlow. Develop Big Data algorithms interactively in Python. Well, interactive development in Python is done best with Datalab.
+1:15
+No-ops, custom machine learning applications at scale. No-ops ML at scale, then that's a role for Cloud ML. Automatically reject inappropriate image content.
+1:33
+Rejecting image content where it is inappropriate. Well, that could be the Vision API. So you could use a Vision API to basically see if this is safe content or not safe content. Build an application to monitor the Spanish twitter feed, assuming that you're not in Spain. We're adding the assumption is that this is a foreign language, and you want to basically figure out what's being said in that foreign language. That's a Natural Language API. Transcribe customer support calls. Well, how do you transcribe? That will be going from speech to text, so that will be the Speech API. 
