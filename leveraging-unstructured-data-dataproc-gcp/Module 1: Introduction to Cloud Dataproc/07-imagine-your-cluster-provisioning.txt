@@ -1,0 +1,16 @@
+0:01
+Imagine that you are using a map-produced cluster, and you realized that you've underprovisioned it, and you need to go get four or five more machines. What do you have to do when you get those five machines? Can you just add them to the cluster?
+0:17
+No, you have to do something else. You have to take the data that you originally had, and you need to reshard the data. You need to take the data, move it around, copy it around.
+0:29
+Now, all the time you're spending recopying the data, redistributing the data, what is the business impact that the cluster is having?
+0:42
+Nothing. It is not actually solving a business problem. All you're doing is you're moving data around.
+0:50
+Or think about a cluster that primarily gets used during work hours. And someone says, well, I'm noticing that in this cluster, you're really not using it between 10 PM and 6 AM. So let's go find the jobs that we can now run on this cluster, and now you're basically beating down every door in your company trying to increase a utilization of your cluster.
+1:17
+Is that a good use of your time?
+1:19
+What would you rather spend your time doing?
+1:23
+Managing resource allocation and provisioning or doing analytics?
