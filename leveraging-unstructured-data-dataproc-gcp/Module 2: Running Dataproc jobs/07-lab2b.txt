@@ -1,0 +1,51 @@
+Lab 2b: Running Dataproc jobs
+In this lab, you will create a Dataproc cluster. You will then submit some jobs to the cluster using the Web Console and the CLI. You will also monitor job progress, view job details and view the results of jobs.
+
+What you learn
+In this lab, you:
+
+Create a Cloud Storage bucket to store job input, output and application files
+Submit jobs using the Web Console
+Submit jobs using the CLI
+Monitor job progress and view results
+Begin the lab
+https://codelabs.developers.google.com/codelabs/cpb102-running-dataproc-jobs/
+
+0:05
+Now that we're done with part three of the lab, let's review the highlights. Now one of the key things when you're moving Hadoop jobs up to Google Cloud Platform and running them on Dataproc, is we want to be able to create the cluster, use it and then delete at the end. So we can't have anything sitting in the Hadoop file system that we need permanently. So the answer to that is a Cloud Storage bucket, put your input files in the Cloud Storage bucket and also have your output files go there. In any application files that are needed for running things, you also want those up there. So we're going to create or use an existing Cloud Storage bucket for that. We're going to submit jobs using the Web Console and we'll also submit jobs using the command line interface and see how they're running. So let's go and look at the lab. So the lab have you start by running a script to create a Dataproc cluster. Well, we see not enough time. So I already run that script. I ran it about just a couple of minutes ago. So we're good there. So we now have our cluster, and I ran that just using Cloud Shell. And in the previous lab, we would have cloned in this GitHub content. So we've cloned in the trading data analysis folder, and we went ahead and uploaded a bunch of files to that bucket. So all is well there. The bucket name, let me just verify the bucket name and get that on my clipboard here in storage.
+1:27
+The bucket we're using is in the title of the project you're using. So that's my project name and we see it's got the unstructured. That's what the replace and upload, uploaded a bunch of files into here that we need, including lab2.py and a few other things.
+1:45
+Okay, so I'm going to go ahead and copy the name of that.
+1:49
+So, I've got it. And let me just make sure I've got it handy, there we go. Good. Okay, so to submit Python based Spark jobs, what I need to do is I need to submit it to the system. So here is lab2.py. And if I click on that we see, okay, this is Python. Is Python Spark, so we want that. We want to go ahead and import Spark content. We wanted to use the files, quicklabs*gcp. That's the name of my file. So I'm going to go ahead and paste in that project here. Whoa, how come it knows that?
+2:29
+Of course. It does know that. Remember this line right here, replace and upload.sh and then the bucket name. We parse that as a parameter, so I went ahead and did some inline code. I bet if we looked at that replace and upload, we'd see exactly where that happened. Great, so we don't need to that, this code is all set up. So, really, I just want to submit this to Dataproc and then the results are going to come back. So, okay, let's take a look. So we're going to go to our Dataproc.
+2:59
+We're going to go ahead and leave Storage and go to Dataproc. We have our cluster running.
+3:07
+And so under jobs, I now want to submit a job.
+3:10
+Okay, so what job do I want to submit it to? Well, I'm going to want to choose the cluster that I have and that's the only one I've got. It's going to be a PySpark job. Where is the main Python file? Well, we are going to have to point to where is it in our bucket. So it's going to be gs://our bucket name/unstructuredlab2.py. All right, so that's where it should be. And we don't need any other options, we just need to submit that. No Python files, no JAR files, no arguments. So we'll click Submit.
+3:48
+And so basically, we've just sent an instruction to the Dataproc cluster. So it's sent over to the master node to say, go ahead and run this Python job using Spark. And when we're done, we get our results. Where are our results going to be? Well, that's going to very much depend on the code.
+4:07
+So, after we submit, we can see it succeed and we can look at the job output. So let's click on that and see what details we have. There's our output. Okay, there's the steps it ran. It ran each of our lines and our output of our script was to dump out the data.
+4:28
+All right, now we might have had that data put it out to Cloud Storage or do some other output. But here this gives us an information about sort of the individual steps. And we are also seeing some logging of information. Now we look at configuration, we just say, okay, this was just a job we run, what python file is supposed to use. Okay, so what if I want to run it again? Well, over here I can say clone. And we can go ahead and just run that again.
+4:57
+Now we could do it through a command line interface as well, because we could basically go to the master node and run it. So gcloud dataproc jobs submit pyspark. --cluster mymluster, or, we could actually do this from Cloud Shell. So let's do that with Cloud Shell. So remember, Cloud Shell is independent of our cluster right now. It sits outsides but it has G Cloud loaded on it.
+5:24
+And, I'm going to paste it in a Notepad so that I can get the correct
+5:29
+bucket name in the command I want to run.
+5:33
+Let me go ahead and run this. We'll submit it.
+5:39
+Now, let's refresh our interface up here. And look at that ,there's our third job and it's running.
+5:46
+Hey, pretty cool. So we've now submitted our jobs both using
+5:51
+the web interface as well as the graphical user interface.
+5:56
+Okay, now, let's take one final look. Let's go look at our storage. Because we're using this bucket, and this is where our code came from, and also this is where our data files would have come from, if we're bringing in any input. And this is ideally where we would write our output to as well, so that we can eliminate anything that needs to be stateful within the cluster itself, okay? So we can go ahead and delete that cluster and I haven't demoed that in any of these yet. So let's make sure that we can see how quick and easy it is to kill off a Dataproc cluster, click Delete, because I'm done with it. Okay, 
