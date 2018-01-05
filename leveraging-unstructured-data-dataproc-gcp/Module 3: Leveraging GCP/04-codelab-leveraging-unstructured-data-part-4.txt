@@ -1,0 +1,13 @@
+Lab Overview: Leveraging Google Cloud Platform Services
+In this lab, you will create a Dataproc cluster that includes Datalab and the Google Python Client API. You will then create iPython notebooks that integrate with BigQuery and storage and utilize Spark.
+
+What you learn
+In this lab, you:
+
+Create a Dataproc cluster with an Initialization Action that installs Google Cloud Datalab
+Run Jupyter Notebooks on the Dataproc cluster using Google Cloud Datalab
+Create Python and PySpark jobs that utilize Google Cloud Storage, BigQuery and Spark.
+Begin the lab
+https://codelabs.developers.google.com/codelabs/cpb102-dataproc-with-gcp/
+
+Mark as completed
