@@ -1,100 +1,100 @@
-0:02
+
 So part two of the lab for Leveraging Unstructured Data had you create a cluster, SSH into the cluster and then run some Pig and Spark jobs interactively and take a little look at the HDFS. So let's look at the highlights from that. So, I've got the lab here and I've got the ability to create a Dataproc cluster over here. So the thing that I'm going to want to do is grab myself, I need to create a Dataproc cluster and a storage bucket. So let's get the cluster building because remember, that takes about 90 seconds. So I'll bring out my Cloud Shell so I can just take this job and run it.
-0:38
+
 Come on, Cloud Shell, there we go. So I'm going to go ahead and paste that in.
-0:46
+
 And so it's going to create me a cluster and presto, it's chugging along. Now, we're also going to want to create a bucket. So this is a gsutil command. To make bucket, we want it to be a regional bucket. We want it to be located in us-central1 because that's where my cluster was created. So, if we look up here, we ask for it to be created in us-central1-a. And since the bucket is regional, we want it just in central1 region and we're going to create it and it's going to ask for it being our DEVSHELL_PROJECT_ID. Okay, that's guaranteed to be unique, so that's a good commander run, let's go ahead and do that.
-1:21
+
 And we'll go ahead and my Cloud Shell is busy. Well, that's okay because you can actually have multiple instances of the Cloud Shell because it is just a VM and you just have a several different interfaces to it. So I'm going to go ahead and initiate one there and I'm going to run this command, gsutil mb. Now, while that's running, what we're actually doing is over here, under storage, we have created a bucket. And in this case, it's been called qwiklabs-gcp-79b4, because that's the bucket we created. That's the name of the project I'm currently in. Well, I'm going to copy that to the clipboard because I'm sure I'm going to need it here in a minute.
-2:01
+
 Okay, already, we want to go ahead and clone in some git code and we want to go ahead and so we're going to go to git. We're going to clone GitHub cloud platform training data analysis. Then we want to go into that directory and then we want to run a command that's going to replace and upload some files to that bucket we just created. Okay, so, I'm going to use notepad really quick.
-2:25
+
 And so there's my project name, I'm going to go and copy this code block.
-2:30
+
 And I'm going to switch back to notepad here. And I'm going to put all this together. Because I need this bucket name stuck on the end. So the first command is the git then it's going to go under the directory and then it's going to run the script there for me and it's going to target that bucket. So let's do that. Okay, so we're cloning in the code nice and quick.
-2:50
+
 Okay, after that, it's now copying the files because we've already changed the directory. We weren't even fast enough to see that one. And now we're doing a replace and upload and that's going to do a bunch of gsutil transfers.
-3:04
+
 All right, so that's chugging along, giving us a whole bunch of files into this bucket. In fact, if we take a peak at the bucket, we see there's a folder unstructured. Right now, it's busy doing something unstructured photos. So that's this folder right here, that's what those commands right there were doing and it went ahead and uploaded us a bunch of photos, cool, what are these actually? Snapshot, okay, exciting a chart, [LAUGH] okay. So, now what we're going to want to do, our cluster should be up and running, so we can switch back to Dataproc and here's our cluster.
-3:43
+
 It's operational, called my-cluster, it's running in us-central, 2 worker notes. And we go down and look, we can see the machines, we can SSH into. So when I click on my-cluster here, let's SSH into the master.
-4:01
+
 So I've got a fresh window.
-4:04
+
 And what we want to do with that is go ahead and run pyspark, so Python Spark. So this is going to use the Python syntax. So we're going to use Python commands to operate a Spark cluster. So we'll do pyspark to get it going.
-4:28
+
 And it's just firing itself up here.
-4:37
+
 It's thinking.
-4:41
+
 That one comes up. We'll just copy and paste that code in there. You know it's up and running when we see the spark. Okay, that's not the right code to run.
-4:52
+
 I didn't copy this right, there we go. Let's copy this. Okay, so data we're asking for the series 0, 1, 2, 3, 4, 5. We're asking it to go ahead and parallelize the data and we're going to go have it map that and we're going to have it multiply each by each other and then we're going to have it square that. So, when we run the program, we got 55. because it took 0, it took 1 times 1, 2 times 2, 3 times 3, 4 times 4, 5 times 5. So, 25 plus 16 plus 9 plus 4 plus 1, I think that calculates to 25. All right, well, that's cool. Now, if you were up for a challenge, we had an optional step in there that said, hey, implement this algorithm. Basically, write a PySpark program to compute the square root of the sum of the first 1000 terms starting with 0. I'm not up for writing code right now. That's okay, we gave you an example of some results. So, I'm going to go ahead and copy this block of code. I didn't mean to do that. I'm going to copy the code. Now, what's this code going to do? Well, it's going to import numpy, so a numeric library for Python. It's going to go ahead and set the data to be a range from 0 to 1000. We're going to ask it to parallelize the data and then we are asking it to perform the function, 8.0 divided by 2 times the value plus 1 times 2 times the value plus 1. And then perform the square root of the sum of all of that. And then produce the result. Wonder what that's going to give me?
-6:24
+
 3.141. Wow, that's a pretty number, I think we know that as pi, just not very accurate, we need to have a much larger range. That could be fun. So feel free to play around a little bit with that. But basically Spark is sort of a universal or a generic platform that people can submit Python on and it actually going to work on the worker notes, so actually had our workers doing a little bit of work. Wasn't a huge processing that we did there, so in fact, if we jump back to our Cloud platform and look at the overall of the cluster itself, we might have seen some little peaks of data in there. And if we actually were to go all the way to the virtual machines, so I'll go look at it from Compute Engine and we look a like at one of the workers, we might have seen that, yeah, they initialized, maybe they did a little blip. Probably not enough to
-7:20
+
 really even register because pretty simple math on there. But let's see, let's see if we can make it do a little bit of exciting, so we'll go back over to our Spark job and we'll just have it run. You know what, let me copy that whole thing in.
-7:38
+
 Have it re-run that work, there we go, results. Did we register anything? Give it a little, little delay there. Yeah, no major spikes on that. We wouldn't needed a more exciting computation. But, if you're a Spark, if you got customers or you're used to working with Spark, go ahead and Play with that.
-8:01
+
 Okay, so the last one was to actually run a Pig Job. So instead of Spark, which we're now going to quit out of.
-8:11
+
 We're now going to run Pig. So Pig is a common platform used for running sort of ETL, extract, transform, and load the data. Now, Pig has been used, it came out of Yahoo in the mid late to or 2000's, and a lot of work at Yahoo was basically to transform data. And rather than going down or writing low level Python and everything, they came up with a Syntax, basically know as Pig as in based on kind of pig Latin, for doing transformation of information. So let's go ahead and make a directory here. So we're going to go mkdir lab2, or cd lab2.
-8:53
+
 That's nothing in there, so let's go ahead and copy over some data so we're going to pull it over from our bucket. Ooh, I don't have my bucket name handy. So let me use my notepad because there is my bucket that I'm after, and I'm just going to replace bucket name.
-9:10
+
 I'm going to copy this. I'm going to go ahead and run this command. So we're going to go ahead and copy over the data from our bucket, contains a couple files, two files, yep. So if we take a look, the first one is our details. So let's cat pet-details.txt. And what we see is it's a data. Now, it's structure or semi-structure, but it doesn't have a header column that actually is telling us what exactly we're looking at. I mean, we can presume the first column is it a dog, or a cat, or a frog, or a pig. The second must be the name. The third is the type. The fourth is the color. And the fifth is maybe weight. Okay, well that's where pigs comes in. Because pigs basically you apply a series of transformations against your data as you go. So, here we go that's our file let's see what the pig job is. So I am going to cut that file .pig and this is a series of transformational steps. Each one of these is actually going to be a step that is performed. So this just removes group by type. So, this here, is this we're going to basically load the data, so it's going to create a virtual table by using that file but then applying a schema across the top. So given that we have semi-structured data in this form here, it's not in a format like a database. So, but I don't want to have to go build a SQL or an Oracle table, import those files in just to peek through my transformation. The whole idea is I do that on the fly here with pig and I leverage my cluster underneath. So we had you run the script directly. I'm going to do the steps for you manually, so we can get a little bit more insight into Pig. So maybe if this is your first experience with Pig, you can get a little bit of an idea with it. So the first thing we better do is we better copy that up to the Hadoop file system because each of the worker nodes is going to need to be able to access the data file, Pig details. Now, that right now is sitting locally on the master node not on the workers and so if we had a hundred workers and we just had a file sitting on the master node, that will become a bottleneck. So by putting them on a Hadoop file system is now available to all the notes. Now an even better place for it would probably be Google Cloud Storage, but we'll talk about that later. Because that'll be a later step to migrating data proc up to the cloud,
-11:44
+
 or migrating your Hadoop jobs up into the cloud with data proc. So let's go ahead and just run these two commands. We're going to get that file out there.
-11:53
+
 So it's running Hadoop File System make a directory, and if you watched the last video, remember I did a Hadoop File System, I just did an ls. Here, we're making a directory and then we went ahead and copy the files up. So that's now available to all the worker nodes. So, we've got this pet-details.pig and what I'm going to do is I'm going to go ahead and type that one again here, and I'm going to grab the lines of code and I'm going to go ahead and put them into my clipboard for a minute here. So that way, we'd put them in my notepad so I can copy them line by line and run them for you. Okay, so the first thing is just going to be remove the group by type file. Well, we don't have that file already because we haven't run the code yet. So now what I'm going to do is I'm just going to run Pig, and you ran it, Pig, and you said feed in this file, so feed in that job, so it was going to execute all that and then return to the results. Instead, as I said, I'm going to run this interactively for us here And so our first was we want to load the data. So we're going to load the file pet details which is coming out of Hadoop file storage with basically the type. The first column the type and that's going to be a characters array. The name is going to be a character array. The preview is going to be a character array, the color is a character array, and the weight in an integer. Now, I'm going to do a little bit of changing here. So I'm going to call this my starting table to give us a little bit of insight into Hadoop. So everywhere I'm using x1, let's replace that.
-13:22
+
 So my starting table is to load that up.
-13:26
+
 And now I'm going to paste that over into, well that's CloudShell. Let's go back to my Pig which is running on top of Hadoop now. And I'm going to paste in that line.
-13:40
+
 Okay, so as we just said, all right we left there instructions but it hasn't done anything. We said, hey, we want you to create this table called Starting Table and create that by using this schema against this file. Now, I could say word describe, starting table and outcomes it says okay, yep. You have a table called starting table, and that's what you find. We could say okay, well I want to go ahead and illustrate.
-14:09
+
 Illustrate starting table.
-14:15
+
 Whoa.
-14:17
+
 Let's scroll back for a second. Look at all of this. All of this here was Apache Pig basically going through and sending off a Hadoop job. Notice we got reference back end Hadoop, execution engine, we've got all this stuff. Now, at our scale, it's probably not, we're not doing this for performance, we're doing this sort of as proof of concept, make sure things are working. But imagine that data file was hundreds of gigabytes in size, while the file is spread out across the Hadoop File System, and it can go ahead and divide up the work and perform some operations. Now in this case, we just asked to describe so it showed us the first
-14:54
+
 the first row there, but I'm going to say dump now, and dump starting table...
-15:01
+
 And presto, here sys-date runs the job and then we're going to see a dump out of our table containing all the rows of our data.
-15:10
+
 Because it's small enough to show us that. So we're running a job on Hadoop to go ahead, apply that schema, and then show me the data.
-15:19
+
 Come on. You can do it. Okay, now, I often elude to what we basically did was we had a whole bunch of computing power, but we just had a little bit of work to do and setting it all up was actually what took the time. But now, we've got structured data, because we casted that schema on top of that. So, let's go to a next line and I'm going to say, let's go ahead and Ooh, this one's, take the starting table by type is not type. Okay. That's actually in case we have a header row, we wouldn't want the header row to come out of that. I don't think we actually need to worry about that line. But let's run it. Let's just say, firstfiltertable.
-16:00
+
 So this is going to be our first filter table, we're going to run that. So I'm going to paste in that line. Okay, so firstfiltertable is x2, so let's do that. And now let's say, this is going to be our addkilotable. So what this is going to do for each row in the first filter table, and that's all the rows that don't contain Type equal to Type, we want to generate the Type column, the Name, the Breed, the Color, the Weight. And we want to take the Weight divided by 2.24. So we're going to have a column called Kilos, and that's going to be floating point. So when I take that and I run it down here, Okay, we now have a new table. So what can we do? Well let's go ahead and just say dump that. Let's go ahead and dump addkilotable. Now, it's going to have to submit that to Hadoop for work. So each one of these lines is effectively a Hadoop job that goes and gets run. So you can imagine at Yahoo, back in the late 90s, or sorry, late 2000s, they were writing these to help them transform their data. So they had unstructured data, they needed to apply different schemas on it, and then produce that. And then Apache kind of took it over and we wound with Apache, the pick, so, here we go. Okay, so now a Dog, Noir, Schnoodle, Black, 21 pounds and 9.37 kilograms, because that's what that step did. So now, what we're going to do is we're going to take our addkilotable, so filter the addkilotable by the lower case of the color is black or the lowercase color is white. So let's call this show only black and white animals. So I am going to run that. I am going to go ahead and do dump, showonlybw.
-17:51
+
 It runs the job, the job behind the scenes, chugging along and we should get a result, just a sec. Now you'll notice that it only runs when I actually say dump or when I said illustrate. It didn't run just put in the command. Because the idea is you might queue up a whole series of commands and then set it all loose on the Hadoop cluster at once.
-18:13
+
 Okay, so yep, now we just have our dogs, our cats, and our pigs that are black or white. So the last step was to do a grouping. So let's go ahead and say groupresults and that's just going to be group.
-18:26
+
 That was show only black and white animals, so we're going to go and do that, and we'll go ahead and paste this in and presto. Let's go ahead and dump that finally. So we'll do dump groupresults.
-18:41
+
 And it's performed the operation, only queue up the last one here. So the last one is to store groupresults, so with the groupresults table into a file called GroupedByType.
-18:52
+
 So, once that job's done, we'll go ahead and tell it to store our results and presto. Now, as I said, the idea of a pig job is you want to do a series of transformational steps so that my end result will be my file written out to the output. And then I'll be, basically, able to use that for loading into a database or where ever else I need it. In this case, it's coming out kind of as nicely structured data. So let me paste that. So we're going to tell it to spit that file out. So again, it's calling the job.
-19:23
+
 And 0% complete, we might see it go to a 50%, and then 100, because you're seeing the details of the Hadoop job executing.
-19:32
+
 Now, our workers aren't really, I mean, the scale of this file is not huge. But the proof of concept in it is really really valuable. And that's how you want it to start developing this stuff is really small jobs and build yourself up to larger and larger data set. So that way, when you do set it loose on at full scale, you know you're not having errors halfway through. Okay, so now we're going to exit. Sorry, quit. And if I take a look at my directory, I have pet details, I've got pet details, and I've got pig. Wait a minute, where is my file? I thought I told that to spit the output to group by type.
-20:13
+
 Wait a minute, where is that file? That's not on the local file system of the master node, that's up in the Hadoop file system. So we're going to want to have to go get that output file. So we could go and copy it, we could a Hadoop file system get it from GroupByType and then all the parts of that. Okay, so let's go and make our directory output.
-20:35
+
 Let's go ahead and copy this line, Hadoop, we're going to copy that, and it's not just a file, it's actually a directory that's going to contain the charge of our output, because that was parallelized and each node put its data to a different file. And then, that is a series of files we'll import as our structure data, so it's extract, transform it, which is what we use pig for, and then we 'e going to load it in somewhere else. Or that's what we'll need to do with these. So let's go to our GroupByType.
-21:09
+
 Sorry, I didn't mean to do that. There it was. There was output we had to create.
-21:16
+
 We take a look.
-21:18
+
 You know what? I didn't change it in the directory. I skipped this step right here. Oops, I'm not going to go back and record the whole video for you. We're just going to take a look. The file is right here, part-r-0000. So we count, part-r-00000.
-21:41
+
 And sure enough, that contains the dump of the data that we saw earlier. Okay, so, we're now done. And hopefully, you found the explanation of pick and a little bit of the spark in there, some value added information during our review.
-21:56
-Okay, go ahead and continue listening to the lecture on the rest of chapter five. 
+
+Okay, go ahead and continue listening to the lecture on the rest of chapter five.
