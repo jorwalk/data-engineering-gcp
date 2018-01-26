@@ -1,0 +1,73 @@
+So let's go to the Cloud Console, console.cloud.google.com, and start Cloud Shell by clicking on the arrow there, at the top right corner. Let me make this bigger.
+
+And then, you would do a git clone of http as github.com et cetera, but I happen to have the repository already here. So I'll CD into the training data analyst repository, and we're in courses, data analysis. And by the way, I'm just hitting tab to do completion, and lab two is where we are. Let's go ahead and run the Python one. So in Python, there's a whole bunch of Python packages that they need. And so, I need to install the Google Cloud data flow, need to install Python pip. So this is what I'll do, I'll go ahead and do a pseudo./install_packages.sh. Pseudo makes me essentially have root permissions, so now that that has been installed, let's go ahead and run it. So we can do python grep.py and that runs this, and in the temporary directory which is where I had the output go. So ls- lrt /temp/, and there is the file that just got written out, output, zero off one. So, I can just do date, and we can see that it's now 15:39 Pacific Time, this file was written at 15:38 Pacific Time. So, let we can do a cat temp output, and that tells us some output, so what is this code actually doing? Let's go ahead and look at grep.py, so this is in Python. So I'm in github.com, training data analyst, so we can just go there. And over here, end courses, data_analysis, lab2, python and grep.py. So the code is quite straightforward, we are reading the input is one directory above java help source, start the Java. Essentially, I'm finding all of the files that match that pattern, we can go back here and we can do clear.
+
+Data, we can look at ls, there. So those are the files and the actual code that we're going to be reading, is all of that code. So this is all of the Java code that we are actually reading,
+
+from this data pipeline.
+
+So I'm going to be reading all of this by saying, beam.io read from text dash inputs. And then for every line of input, I'm calling the function mygrep. And my grep, essentially checks if the term that I'm looking for is in line then yield the line. The source that I'm looking for is a word import. So any of these lines that have the word import in them, are going to get returned out of this into the next step. So the p collection that's returned from here that goes to the next step,
+
+is the list of lines that contain the word import in them. And that's what gets written to the output/temp, which is why, when we went here and we look at our output. Okay, when we look at our output, we see that these are all lines that contain the word import in them. There's an import here, there is an import here. Okay, so every one of these lines contains a word import at some point or the other, okay? That's why this pipeline is returning that.
+
+On the Java side the code is very similar, so let's go to data analysis, lab2, Java. And in here, there is our Grep.java and Grep.java here, again, creates a pipeline. And uses input all of the JAVA files, and writes to output/temp. And looks for the search term import, so it does a textio.read of all of the inputs. And then for every one of those, this is the code that actually gets executed. The code that gets executed is, get the input, which is a line, and if the line contains a search term, then send it to the output. So this code gets executed, c.element, this is the input into this step of the pipeline. That is a string, so that's why the do function type here is a string, and c.output the thing that we're outputting is also a string. And that's what the second string does. So we are now, writing a do function that takes a string element and outputs another string element.
+
+And the result of this is going to be a p collection of strings. So, I take that p collection of strings and I write it to the outputprefix/temp/output.text. And this time in Java, I'm writing it without charting, so now if we run it, you will see. So, let's just go ahead and remove that, so it's very clear what it is that we're doing, let's go to Java help. And what we would like to do is to run this locally.
+
+And what the run locally does as it did on the slide, it does maven, mvn, compile.exec Java, and the main class, the class name. So let's go ahead and do run locally and grep, because this script actually adds the fully qualified package name. So run locally.sh.grep and at this point, the quote is going to get compiled and its going to get run
+
+All right, and now if you do ls- lrt /tmp, there is an output.txt that just got written at 15:44, which is the time now, it's 15:44. And as before, the output.txt contains all of the imports, right. The word import occurs somewhere within the line.
+
+Now, the same code can also get executed on the Cloud, so we can do run oncloud
+
+Grep, sorry.
+
+In order to run the code on the Cloud, the same code can get run on the cloud, with different in, no, not here.
+
+In order to run this code on the Cloud, we need to change the input. This file, source, main, Java, et cetera doesn't, actually, exists on the cloud. So what we need to do is to first to file copy the code, copy the data, so that's what cat, copy to Cloud message does. It copies those files to, gs://cloud-training-demo/javahelp. So let me just go ahead and do that, and now, my input is going to be all of the Java files in that directory. And so what I need to do is that I would need to edit the file, grep.Java, now I can do vi and edit it.
+
+Grep.Java or nano and edit it, but let's do something neat. Let's go ahead and edit it using the File Editors, so I can do files, and launch the code editor. This is experimental, but I hope this will work.
+
+So there it is, the File Editor has been launched.
+
+So I'm now editing the file that's in my Cloud Shell account. So there is training-data-analyst, courses, data analysis, lab two. We are editing the Java file so Java help source, main, java, com, google, cloud, training, data analyst, Java help, there it is, Grep.Java. So as you can see there is all of the syntax, coloring, et cetera and what I want to do is that I want to change the input to be, start at Java. And let's change the output also to go to that directory, so instead of /temp, let's write the output to that directory. GS cloud training demos Javahelp/output and at this point, we are done. So let's go ahead and save it, save the file. And indeed, when we come back to Cloud Shell and let's just
+
+cut it, to make sure that this is a changed thing. And you'll notice that the input and the output have been changed because we've just changed it in the code editor. Now that we have that done, let's go ahead and run it on the Cloud.
+
+To run on the Cloud, I need to provide the project name, cloud training demos, the bucket name, which is also cloud training demos.
+
+And the main class name, which is grep, and at this point, the code is going to get compiled.
+
+And it is going to be staged onto the Cloud, and the data flow pipeline is going to get run on the cloud. So, we can go to the console, what I call the hamburger menu, and go down to data flow, there is data flow.
+
+There is the grep that we just launched. We can go look at the grep and we see that the grep contains three steps, GetJava, grep and Textio.Write. Of course, this being a Cloud program, it's going to take longer for such a small file than us doing it locally. But notice that we have a job summary that says, that the job is running. We can stop the job if necessary, and it's telling us how long it's gotten to take. And it's also going to tell us, all of the parameters that we provided when we started it.
+
+So in this case, we provided a temporary location and
+
+we ask it to use the data for runner.
+
+And you see, now, that the worker pool has started, its a minute and ten seconds have elapsed. There's just one worker because this right there, isn't really much here to do our scaling on. And one of the CPUs is getting executed and, in a few minutes, it will be done. And this job status will change from running to successful.
+
+You can also look here, at what's happening to each of the steps.
+
+Again, this being a very small pipeline, there isn't all that much of interest happening here. But on a more complex pipeline, let me see if I can bring up a more complex pipeline. So there is a more complex pipeline, this is involving a real-time machine learning prediction. And so you can see that there is a pretty complex set of operations that are happening, until I cancelled it. And each of these steps, right, it will give us indications of how many elements got processed in that step. And the size of those elements, and what happened to them, what got written out. In this case, for every element that was added in, the same element gets added out. That, of course, need not be the case, this one for example is outputting seven, no, it's 9,502 elements got added in. Only 7,026 of them get written out, a few of them aren't written out.
+
+So let's go back to our pipeline.
+
+And our pipeline, at this point, is all successful, and it ran, and its going to shortly, its GetJava. So the input has been successful, Grep has finished, it is still writing out the output.
+
+And as soon as that output is done, we should be able to go look at it.
+
+And here we learn that there are 511 lines of code that we read. And a grep essentially, the filter, starts from 511 inputs and goes down to 65 outputs. So there are 65 import statements in our code and those are the 65 that are being written out. So, at this point,
+
+Now that the is finished, we can go to the hamburger menu again, go down to storage.
+
+And look at user browser, and look at Microsoft Cloud Training Demos, and in there was Java help.
+
+So inside Java help, I have all of my input files. I also have my output that just got written, output.text on 5/10/17 at 3:53 PM. And we can go look at that and that, again, is a set of import statements in our file. So this gives us an idea of how to run a data flow pipeline locally, how to run it on the Cloud, how to monitor it, look at the steps. And also looking at the number of input elements, and output elements, and the time taken. Those are all different ways that you can debug and monitor a running data flow pipeline. You also have access to the logs, of course. So you could go to the data flow pipeline itself,
+
+And for every job, you have a link to the logs for that job. So these are all of the steps that were taken. And of course, one of the cool things is we also got to look at
+
+the code editor, that's part of Cloud Shell.
+
+And let's go back to the course

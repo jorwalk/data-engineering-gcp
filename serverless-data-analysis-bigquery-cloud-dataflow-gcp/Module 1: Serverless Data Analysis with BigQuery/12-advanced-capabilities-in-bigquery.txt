@@ -1,0 +1,19 @@
+BigQuery supports all of the standard SQL types, so you can have strings, you can have 64-bit integers, double precision floats, booleans, which are true or false, arrays, which is an ordered list of elements – it could be empty, so it could have zero elements. But every array essentially contains lots of elements, of, say, integers or floats or booleans or strings or even structs. A struct is like a class, right? It's basically a bunch of fields. Each of those properties or fields has a type and has a field name, right? Typically, you want to give it a name so you can go ahead and you can select using that name. And in addition, there is a type called timestamp, and a timestamp is to millisecond precision and you can have years between 1 and 9999.
+
+So this query is from a data set called GSOD stations.
+
+And I'm joining with another table that is of 2015 data GSOD 2015. So the weather data is called weather, the station data is called station. And the station data has a field called USAF. The weather data has a field called station. So we want to make sure that the station USAF is the same as the weather station. So we're basically finding all of these stations that are run by the US Air Force.
+
+And we want to make sure, are going to find all of the stations
+
+with the USAF ID make sure that they're equal to the weather.station_id. Where the station state is Washington, so we're finding all of the Washington State weather stations and making sure that the USAF is not empty. So making sure that that actually does exist. And we're grouping it by station_id. So now we basically get he weather station, and we basically get the station name. So let's go ahead and see what this returns.
+
+So what this returns is a list of all the station_ids and the names of those stations in the state of Washington in the US. So there are 54 such stations that all exist here. So that's our first query. So we take this result set, so this result set that has station_id and name, we are now calling it.
+
+If you look at our query, we are now calling that WashingtonStations. So, WITH WashingtonStations AS, that particular data set. And again, this data set contains the weather station and contains the name of the station. So we take that and recalling that WashingtonStations. From WashingtonStations we are basically selecting the name and we are selecting the number of records from the 2015 data, where WashingtonStations station_id is weather that station. To be basically finding all of the stations here that exist in the state of Washington for which the precipitation is greater than 0. So we're basically finding rainy days. So now, we basically have the name of the Washington station, and we have the number of days that it rained at that station.
+
+And we are ordering it by rainy days in descending order. So basically, what we have done is that we are finding all of the unique stations in Washington. And for each of those unique stations in Washington, we are basically finding the number of rainy days and listing the most or the rainiest stations in the state of Washington. So what does this return?
+
+So let us take this query and run it.
+
+And we basically see that Bellingham and Quillayute, right? Quillayute, there okay [LAUGH] airport, government airport etc.. Those are the rainiest stations in Washington. Interesting enough, Seattle airport comes pretty well down the list, that's number 10. Seattle is not the rainiest of the cities in the state of Washington. Okay, so the result here shows that the first airport, the rainiest airport is Quillayute. Second is Bellingham, Bowerman, etc. Actually, if you look at the result set, Seattle airport turns out to be number 10, Sea-Tac is number 10. So Seattle is not, as many people think, Seattle is a very rainy city. But even in the state of Washington, it's not the rainiest.
