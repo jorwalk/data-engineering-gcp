@@ -1,0 +1,24 @@
+https://codelabs.developers.google.com/codelabs/cpb101-bigquery-query/#0
+
+What you learn
+In this lab, you:
+
+Create and run a query
+Modify the query to add clauses, subqueries, built-in functions and joins.
+
+
+Load a CSV file into a BigQuery table using the web UI
+Load a JSON file into a BigQuery table using the CLI
+
+https://codelabs.developers.google.com/codelabs/cpb101-bigquery-data/
+
+In this lab, you write a query that uses advanced SQL concepts:
+
+Nested fields
+Regular expressions
+With statement
+Group and Having
+
+https://codelabs.developers.google.com/codelabs/cpb101-advanced-queries/#0
+
+https://medium.com/@hoffa/the-top-weekend-languages-according-to-githubs-code-6022ea2e33e8#.8oj2rp804

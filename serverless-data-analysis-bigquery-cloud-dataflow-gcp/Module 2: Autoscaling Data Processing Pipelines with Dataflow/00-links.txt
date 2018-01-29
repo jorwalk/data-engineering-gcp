@@ -1,0 +1,11 @@
+For more resources on Dataflow, there is the docs on Dataflow, the example that we looked at of finding Java projects that need help by looking at large amount of code on GitHub.
+
+It's written up in this Medium post, so you can go ahead and look at that. And there's a solution paper that looks at how to process logs at scale using Cloud Dataflow.
+
+Thank you very much.
+
+https://cloud.google.com/dataflow/
+
+https://medium.com/google-cloud/popular-java-projects-on-github-that-could-use-some-help-analyzed-using-bigquery-and-dataflow-dbd5753827f4#.t82wsxd2c
+
+https://cloud.google.com/solutions/processing-logs-at-scale-using-dataflow
