@@ -1,0 +1,6 @@
+0:00
+It's not going to be enough for you to take all the positive cases. All the types of clouds that the National Weather Service or NASA tells you. These are the types of clouds there are and you make sure that you have images for each type of cloud. You also have to put yourself in the shoes of Machine Learning Algorithm. And the way to think about it is an ML algorithm is like a two-year old. It only knows exactly what it has seen before.
+0:30
+So you have to think in terms of what kind of negative examples is going to confuse a machine learning model. So you might think, for example, about what happens if there are cartoons. What happens if there are just pictures of white clouds on blue background?
+0:48
+Is that going to be thought off as a cloud? And if it is if in your domain in your problem, in the thing that you want to solve, if these images should not be clouds, then there shouldn't be a cloud. And it's the same thing about whether it's cotton balls in a field, or chemical entrails, or sheep, or a close up of a marble floor. You have to ensure that you have negative examples, near misses included in your data set. So your data set has to be complete in terms of positive cases. It also has to include negative cases that are close that are near misses. 
