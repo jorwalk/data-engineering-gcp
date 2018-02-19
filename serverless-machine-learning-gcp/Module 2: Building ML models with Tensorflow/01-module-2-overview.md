@@ -1,0 +1,3 @@
+In this module we will learn how to build machine learning models using TensorFlow. So, we'll talk what TensorFlow is, we'll look at TensorFlow code, how to get started with it. How to do to TensorFlow graphs, how to look at loops in TensorFlow, what kind of loops there are and how to monitor machine learning training as it goes on using TensorBoard.
+
+In this module, we will look at what TensorFlow is and how to use TensorFlow for machine learning. And then we will look at how to write distributed TensorFlow models so that we can carry out machine learning training on a number of machines, rather than just on a single machine. So what is TensorFlow? 
