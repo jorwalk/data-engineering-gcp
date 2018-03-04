@@ -1,0 +1,15 @@
+Script that will cd into the charts directory
+Script that will call git update
+
+First, I recommend against using git pull. Instead, create a safer git up alias:
+https://stackoverflow.com/q/15316601/712605
+
+git config --global alias.up '!git remote update -p; git merge --ff-only @{u}'
+See this answer for an explanation of git up.
+
+Then you can safely script it:
+
+#!/bin/sh
+for repo in repo1 repo2 repo3 repo4; do
+    (cd "${repo}" && git checkout master && git up)
+done
