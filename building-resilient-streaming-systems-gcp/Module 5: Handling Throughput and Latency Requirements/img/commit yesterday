@@ -1,0 +1,10 @@
+git commit --amend --date="2018-03-13 12:00:00"
+
+Enhancement
+[incubator/fluentd-elasticsearch] Adjust the configMap to allow configurable system.conf
+
+We would like to propose adding the `containers.input.conf` data configuration,
+to the `values.yaml` file, so that we can override the default value.
+
+Currently the `containers.input.conf` defines the path as `path /var/log/containers/*.log`
+on some Kubernetes environments this path does not exist.
