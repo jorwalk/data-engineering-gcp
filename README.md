@@ -37,12 +37,12 @@ Machine Learning APIs
 * Learn how to invoke ML APIs from Python and use their results.
 https://codelabs.developers.google.com/codelabs/cpb100-translate-api/
 
-Cloud Datastore: https://cloud.google.com/datastore/
-Cloud Bigtable: https://cloud.google.com/bigtable/
-Google BigQuery: https://cloud.google.com/bigquery/
-Cloud Datalab: https://cloud.google.com/datalab/
-TensorFlow: https://www.tensorflow.org/
-Cloud Machine Learning: https://cloud.google.com/ml/
-Vision API: https://cloud.google.com/vision/
-Translate API: https://cloud.google.com/translate/
-Speech API: https://cloud.google.com/speech/
+- Cloud Datastore: https://cloud.google.com/datastore/
+- Cloud Bigtable: https://cloud.google.com/bigtable/
+- Google BigQuery: https://cloud.google.com/bigquery/
+- Cloud Datalab: https://cloud.google.com/datalab/
+- TensorFlow: https://www.tensorflow.org/
+- Cloud Machine Learning: https://cloud.google.com/ml/
+- Vision API: https://cloud.google.com/vision/
+- Translate API: https://cloud.google.com/translate/
+- Speech API: https://cloud.google.com/speech/
