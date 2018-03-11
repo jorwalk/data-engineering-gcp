@@ -1,0 +1,50 @@
+## 1) Test format
+- The exam consists of 50 questions that must be answered in 2 hours.
+- The questions are either multiple choice (pick one correct answer) or multiple answer (pick M of N possible answers). Questions can be marked for review later.
+- The multiple choice questions are "classic" in the sense that two of the answers can be eliminated immediately. Some detail in the question will bias the choice of the remaining answers.
+- The exam is taken on a computer and you will not have access to pen and paper.
+- The screen is split in half. The left side contains the questions while the right side contains the case studies.
+- The two case studies that are published online were the two case studies used in the exam. The exam is setup so that all of the questions pertaining to a particular case study appear together.
+
+## 2) Study Approach
+1. Review the [exam guide](https://cloud.google.com/certification/guides/data-engineer/).
+- Take the Data Engineering course. It is useful but inadequate for passing the exam.
+- Memorize this [flow chart](https://cloud.google.com/storage-options/).
+- Go through tutorials for the various technologies.
+- Spend extra time investigating BigQuery.
+- Gain a basic understanding of machine learning including:
+  - Understand the difference between classification and regression.
+  - Understand the difference between supervised learning and unsupervised learning.
+  - Understand the complexity of machine learning techniques, e.g., Which requires more resources: linear regression or neural networks?
+  - Understand how to handle data for machine learning including partitioning data between training, test, and validation and preprocessing techniques like dimensionality reduction.
+- Gain a familiarity with other popular databases and understand which ones should be used for particular problems:
+  - [Setting up Redis](https://cloud.google.com/community/tutorials/setting-up-redis)
+  - [Cassandra](https://console.cloud.google.com/launcher/details/datastax-public)
+  - [HBase](https://cloud.google.com/bigtable/docs/bigtable-and-hbase)
+  - [MySQL](https://cloud.google.com/solutions/setup-mysql)
+  - [Mongo](https://cloud.google.com/solutions/deploy-mongodb)
+  - [HDFS and extensions](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage)
+- There will be a question on [HIPAA](https://cloud.google.com/security/compliance/hipaa/), [COPPA](https://www.google.com/cloud/security/compliance/coppa/), etc.
+- Read the "Concepts" page for each of the technologies listed in the table.
+
+| Topic	| Theory	| Practice |
+| ------| :------:| :-------:|
+| [Cloud Storage](https://cloud.google.com/storage/docs/concepts) - [Options](https://cloud.google.com/storage-options) |	xxx |	xx |
+| [Cloud Spanner](https://cloud.google.com/spanner/docs/) |	x | |	 
+| [Cloud SQL](https://cloud.google.com/sql/docs/) |	xxx |	x |
+| [Cloud Datastore](https://cloud.google.com/datastore/docs/) |	x |	 |
+| [Cloud Bigtable](https://cloud.google.com/bigtable/docs/) |	xxx |	x |
+| [BigQuery](https://cloud.google.com/bigquery/docs/) |	xxx |	xxx |
+| [Pub/Sub](https://cloud.google.com/pubsub/docs/) | xxx |	x |
+| [DataProc](https://cloud.google.com/dataproc/docs/) |	xx |	x |
+| [DataFlow](https://cloud.google.com/dataflow/docs/) |	xx |	x |
+| [IAM and Security](https://cloud.google.com/iam/docs/) |	xx |	x |
+| [Datalab](https://cloud.google.com/datalab/docs/) | x |	x |
+| [DataStudio](https://cloud.google.com/data-studio/) |	x |	x |
+
+---
+#### Storage Options Flow Chart
+![Storage Options Flow Chart](https://cloud.google.com/images/storage-options/flowchart.svg?sanitize=true)
+
+#### Footnotes:
+1. Cloud Spanner was not on the exam. Perhaps it was too new.
