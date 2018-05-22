@@ -143,7 +143,6 @@
 
 * C. and D. are not correct because you do not need to use GCS/BQ for this scenario.
 
-
 [Schema Design Time Series](https://cloud.google.com/bigtable/docs/schema-design-time-series)
 
 ---
@@ -194,78 +193,101 @@ Feedback
 [Difference between Dataflow and Dataproc](https://stackoverflow.com/questions/46436794/what-is-the-difference-between-google-cloud-dataflow-and-google-cloud-dataproc)
 
 ---
-You are building a data pipeline on Google Cloud. You need to select services that will host a deep neural network machine-learning model also hosted on Google Cloud. You also need to monitor and run jobs that could occasionally fail. What should you do?
+> You are building a data pipeline on Google Cloud. You need to select services that will host a deep neural network machine-learning model also hosted on Google Cloud. You also need to monitor and run jobs that could occasionally fail. What should you do?
+
 * A. Use Cloud Machine Learning to host your model. Monitor the status of the Operation object for 'error' results.
+
 * B. Use Cloud Machine Learning to host your model. Monitor the status of the Jobs object for 'failed' job states.
 
 * C. Use a Kubernetes Engine cluster to host your model. Monitor the status of the Jobs object for 'failed' job states.
+
 * D. Use a Kubernetes Engine cluster to host your model. Monitor the status of Operation object for 'error' results.
 
 ** Feedback **
-B (Correct Answer) - B is correct because of the requirement to host an ML DNN and Google-recommended monitoring object (Jobs); see the links below.
-A is not correct because you should not use the Operation object to monitor failures.
 
-C and D are not correct because you should not use a Kubernetes Engine cluster for this scenario.
+* B. (Correct Answer) - B is correct because of the requirement to host an ML DNN and Google-recommended monitoring object (Jobs); see the links below.
+
+* A. is not correct because you should not use the Operation object to monitor failures.
+
+* C. and D. are not correct because you should not use a Kubernetes Engine cluster for this scenario.
 
 
-https://cloud.google.com/kubernetes-engine/docs/how-to/monitoring
+[Monitoring](https://cloud.google.com/kubernetes-engine/docs/how-to/monitoring)
 
-https://cloud.google.com/ml-engine/docs/managing-models-jobs
+[Managing Models Jobs](https://cloud.google.com/ml-engine/docs/managing-models-jobs)
 
 ---
-You are building a data pipeline on Google Cloud. You need to prepare source data for a machine-learning model. This involves quickly deduplicating rows from three input tables and also removing outliers from data columns where you do not know the data distribution. What should you do?
+> You are building a data pipeline on Google Cloud. You need to prepare source data for a machine-learning model. This involves quickly deduplicating rows from three input tables and also removing outliers from data columns where you do not know the data distribution. What should you do?
+
 * A. Write an Apache Spark job with a series of steps for Cloud Dataflow. The first step will examine the source data, and the second and third steps step will perform data transformations.
 
 * B. Write an Apache Spark job with a series of steps for Cloud Dataproc. The first step will examine the source data, and the second and third steps step will perform data transformations.
+
 * C. Use Cloud Dataprep to preview the data distributions in sample source data table columns. Write a recipe to transform the data and add it to the Cloud Dataprep job.
+
 * D. Use Cloud Dataprep to preview the data distributions in sample source data table columns. Click on each column name, click on each appropriate suggested transformation, and then click 'Add' to add each transformation to the Cloud Dataprep job.
 
 ** Correct answer **
-D. Use Cloud Dataprep to preview the data distributions in sample source data table columns. Click on each column name, click on each appropriate suggested transformation, and then click 'Add' to add each transformation to the Cloud Dataprep job.
+
+* D. Use Cloud Dataprep to preview the data distributions in sample source data table columns. Click on each column name, click on each appropriate suggested transformation, and then click 'Add' to add each transformation to the Cloud Dataprep job.
 
 ** Feedback **
-D (Correct Answer) - D is correct because of the requirements to prepare/clean source data: use Cloud Dataprep suggested transformations to quickly build a transformation job.
-C is not correct because you should not write a recipe in Cloud Dataprep: you can simply use the suggested transformations.
 
-A and B are not correct because you should not use Apache Spark and Cloud Dataflow or Cloud Dataproc for this scenario.
+* D (Correct Answer) - D is correct because of the requirements to prepare/clean source data: use Cloud Dataprep suggested transformations to quickly build a transformation job.
+
+* C. is not correct because you should not write a recipe in Cloud Dataprep: you can simply use the suggested transformations.
+
+* A. and B. are not correct because you should not use Apache Spark and Cloud Dataflow or Cloud Dataproc for this scenario.
 
 ---
 
-You need to deploy a TensorFlow machine-learning model to Google Cloud. You want to maximize the speed and minimize the cost of model prediction and deployment. What should you do?
+> You need to deploy a TensorFlow machine-learning model to Google Cloud. You want to maximize the speed and minimize the cost of model prediction and deployment. What should you do?
+
 * A. Export your trained model to a SavedModel format. Deploy and run your model on Cloud ML Engine.
+
 * B. Export your trained model to a SavedModel format. Deploy and run your model from a Kubernetes Engine cluster.
 
 * C. Export 2 copies of your trained model to a SavedModel format. Store artifacts in Cloud Storage. Run 1 version on CPUs and another version on GPUs.
+
 * D. Export 2 copies of your trained model to a SavedModel format. Store artifacts in Cloud ML Engine. Run 1 version on CPUs and another version on GPUs.
 
 ** Correct answer **
-A. Export your trained model to a SavedModel format. Deploy and run your model on Cloud ML Engine.
+
+* A. Export your trained model to a SavedModel format. Deploy and run your model on Cloud ML Engine.
 
 ** Feedback **
-A (Correct Answer) - A is correct because of Google recommended practices; that is, ”just deploy it.”
-B is not correct because you should not run your model from Kubernetes Engine.
 
-C and D are not correct because you should not export 2 copies of your trained model, etc, for this scenario.
+* A. (Correct Answer) - A is correct because of Google recommended practices; that is, ”just deploy it.”
+
+* B. is not correct because you should not run your model from Kubernetes Engine.
+
+* C. and D. are not correct because you should not export 2 copies of your trained model, etc, for this scenario.
 
 
-https://cloud.google.com/ml-engine/docs/deploying-models
+[Deploying Models](https://cloud.google.com/ml-engine/docs/deploying-models)
 
-https://cloud.google.com/ml-engine/docs/prediction-overview
+[Prediction Overview](https://cloud.google.com/ml-engine/docs/prediction-overview)
 
 ---
-You have data stored in a Cloud Storage dataset and also in a BigQuery dataset. You need to secure the data and provide 3 different types of access levels for your Google Cloud Platform users: administrator, read/write, and read-only. You want to follow Google-recommended practices.What should you do?
+> You have data stored in a Cloud Storage dataset and also in a BigQuery dataset. You need to secure the data and provide 3 different types of access levels for your Google Cloud Platform users: administrator, read/write, and read-only. You want to follow Google-recommended practices.What should you do?
+
 * A. Create 3 custom IAM roles with appropriate policies for the access levels needed for Cloud Storage and BigQuery. Add your users to the appropriate roles.
 
 * B. At the Organization level, add your administrator user accounts to the Owner role, add your read/write user accounts to the Editor role, and add your read-only user accounts to the Viewer role.
+
 * C. At the Project level, add your administrator user accounts to the Owner role, add your read/write user accounts to the Editor role, and add your read-only user accounts to the Viewer role.
+
 * D. Use the appropriate pre-defined IAM roles for each of the access levels needed for Cloud Storage and BigQuery. Add your users to those roles for each of the services.
 
 ** Correct answer **
-D. Use the appropriate pre-defined IAM roles for each of the access levels needed for Cloud Storage and BigQuery. Add your users to those roles for each of the services.
-Feedback
-D (Correct Answer) - D is correct because the principle of least privilege favors using pre-created roles with associated policies when they match your requirements.
-A, B, and C are not correct because it is a Google best practice to use pre-defined IAM roles when they exist and match your business scenario; see the links below.
 
+* D. Use the appropriate pre-defined IAM roles for each of the access levels needed for Cloud Storage and BigQuery. Add your users to those roles for each of the services.
+
+** Feedback **
+
+* D (Correct Answer) - D is correct because the principle of least privilege favors using pre-created roles with associated policies when they match your requirements.
+
+* A, B, and C are not correct because it is a Google best practice to use pre-defined IAM roles when they exist and match your business scenario; see the links below.
 
 Storage access control
 
