@@ -296,59 +296,73 @@ BigQuery access control
 IAM documentation
 
 ---
-You are developing an application on Google Cloud that will label famous landmarks in users’ photos. You are under competitive pressure to develop the predictive model quickly. You need to keep service costs low. What should you do?
+> You are developing an application on Google Cloud that will label famous landmarks in users’ photos. You are under competitive pressure to develop the predictive model quickly. You need to keep service costs low. What should you do?
+
 * A. Build an application that calls the Cloud Vision API. Inspect the generated MID values to supply the image labels.
 
 * B. Build an application that calls the Cloud Vision API. Pass client image locations as base64-encoded strings.
+
 * C. Build and train a classification model with TensorFlow. Deploy the model using Cloud Machine Learning Engine. Pass client image locations as base64-encoded strings.
+
 * D. Build and train a classification model with TensorFlow. Deploy the model using Cloud Machine Learning Engine. Inspect the generated MID values to supply the image labels.
 
 ** Correct answer **
 
-B. Build an application that calls the Cloud Vision API. Pass client image locations as base64-encoded strings.
+* B. Build an application that calls the Cloud Vision API. Pass client image locations as base64-encoded strings.
+
 ** Feedback **
 
-B (Correct Answer) - B is correct because of the requirement to quickly develop a model that generates landmark labels from photos. This is supported in Cloud Vision API; see the link below.
-A is not correct because you should not inspect the generated MID values; instead, you should simply pass the image locations to the API and use the labels, which are output.
+* B. (Correct Answer) - B is correct because of the requirement to quickly develop a model that generates landmark labels from photos. This is supported in Cloud Vision API; see the link below.
 
-C and D are not correct because you should not build a custom classification TF model for this scenario.
+* A. is not correct because you should not inspect the generated MID values; instead, you should simply pass the image locations to the API and use the labels, which are output.
+
+* C. and D. are not correct because you should not build a custom classification TF model for this scenario.
 
 
-https://cloud.google.com/vision/docs/labels
+[Vision Labels](https://cloud.google.com/vision/docs/labels)
 
 ---
-You are setting up Cloud Dataproc to perform some data transformations using Apache Spark jobs. The data will be used for a new set of non-critical experiments in your marketing group. You want to set up a cluster that can transform a large amount of data in the most cost-effective way. What should you do?
+> You are setting up Cloud Dataproc to perform some data transformations using Apache Spark jobs. The data will be used for a new set of non-critical experiments in your marketing group. You want to set up a cluster that can transform a large amount of data in the most cost-effective way. What should you do?
+
 * A. Set up a cluster in High Availability mode with high-memory machine types. Add 10 additional local SSDs.
+
 * B. Set up a cluster in High Availability mode with default machine types. Add 10 additional Preemptible worker nodes.
 
 * C. Set up a cluster in Standard mode with high-memory machine types. Add 10 additional Preemptible worker nodes.
+
 * D. Set up a cluster in Standard mode with the default machine types. Add 10 additional local SSDs.
 
 ** Correct answer **
 
-C. Set up a cluster in Standard mode with high-memory machine types. Add 10 additional Preemptible worker nodes.
+* C. Set up a cluster in Standard mode with high-memory machine types. Add 10 additional Preemptible worker nodes.
 
 ** Feedback **
-C (Correct Answer) - C is correct because Spark and high-memory machines only need the Standard mode.
-Also, use Preemptible nodes because you want to save money and this is not mission-critical.
-A and B are not correct because this scenario does not call for High Availability mode.
 
-D is not correct because you should not add more local SSDs; instead, use Preemptible nodes to meet your objective of delivering a cost-effective solution.
+* C. (Correct Answer) - C is correct because Spark and high-memory machines only need the Standard mode.
+Also, use Preemptible nodes because you want to save money and this is not mission-critical.
+
+* A. and B. are not correct because this scenario does not call for High Availability mode.
+
+* D. is not correct because you should not add more local SSDs; instead, use Preemptible nodes to meet your objective of delivering a cost-effective solution.
 
 ---
-You are upgrading your existing (development) Cloud Bigtable instance for use in your production environment. The instance contains a large amount of data that you want to make available for production immediately. You need to design for fastest performance. What should you do?
+> You are upgrading your existing (development) Cloud Bigtable instance for use in your production environment. The instance contains a large amount of data that you want to make available for production immediately. You need to design for fastest performance. What should you do?
+
 * A. Change your Cloud Bigtable instance type from Development to Production, and set the number of nodes to at least 3. Verify that the storage type is HDD.
+
 * B. Change your Cloud Bigtable instance type from Development to Production, and set the number of nodes to at least 3. Verify that the storage type is SSD.
 
 * C. Export the data from your current Cloud Bigtable instance to Cloud Storage. Create a new Cloud Bigtable Production instance type with at least 3 nodes. Select the HDD storage type. Import the data into the new instance from Cloud Storage.
+
 * D. Export the data from your current Cloud Bigtable instance to Cloud Storage. Create a new Cloud Bigtable Production instance type with at least 3 nodes. Select the SSD storage type. Import the data into the new instance from Cloud Storage.
 
 ** Feedback **
 
-B (Correct Answer) - B is correct because Cloud Bigtable allows you to 'scale-in-place,' which meets your requirements for this scenario.
-A is not correct because you should be using SSD storage for this scenario.
+* B. (Correct Answer) - B is correct because Cloud Bigtable allows you to 'scale-in-place,' which meets your requirements for this scenario.
 
-C and D are not correct because creating a new Cloud Bigtable instance is extraneous and not needed to export, you can upgrade in place for nodes, but the storage type cannot be changed.
+* A is not correct because you should be using SSD storage for this scenario.
+
+* C. and D. are not correct because creating a new Cloud Bigtable instance is extraneous and not needed to export, you can upgrade in place for nodes, but the storage type cannot be changed.
 
 ---
 As part of your backup plan, you set up regular snapshots of Compute Engine instances that are running. You want to be able to restore these snapshots using the fewest possible steps for replacement instances. What should you do?
