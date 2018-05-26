@@ -365,101 +365,118 @@ Also, use Preemptible nodes because you want to save money and this is not missi
 * C. and D. are not correct because creating a new Cloud Bigtable instance is extraneous and not needed to export, you can upgrade in place for nodes, but the storage type cannot be changed.
 
 ---
-As part of your backup plan, you set up regular snapshots of Compute Engine instances that are running. You want to be able to restore these snapshots using the fewest possible steps for replacement instances. What should you do?
+> As part of your backup plan, you set up regular snapshots of Compute Engine instances that are running. You want to be able to restore these snapshots using the fewest possible steps for replacement instances. What should you do?
+
 * A. Export the snapshots to Cloud Storage. Create disks from the exported snapshot files. Create images from the new disks.
+
 * B. Export the snapshots to Cloud Storage. Create images from the exported snapshot files.
 
 * C. Use the snapshots to create replacement disks. Use the disks to create instances as needed.
+
 * D. Use the snapshots to create replacement instances as needed.
 
 ** Correct answer **
 
-D. Use the snapshots to create replacement instances as needed.
+* D. Use the snapshots to create replacement instances as needed.
 
 ** Feedback **
 
-D (Correct Answer) - D is correct because the scenario asks how to recreate instances.
-A, B, and C are not correct because the Google best practice of creating images from running Compute Engine instances is to first take a snapshot, export it to Cloud Storage, and then import that file as the basis for a custom image for use in DR scenarios; see the link below.
+* D. (Correct Answer) - D is correct because the scenario asks how to recreate instances.
 
+* A, B, and C are not correct because the Google best practice of creating images from running Compute Engine instances is to first take a snapshot, export it to Cloud Storage, and then import that file as the basis for a custom image for use in DR scenarios; see the link below.
 
 Storage Options
 
 ---
+> You regularly use prefetch caching with a Data Studio report to visualize the results of BigQuery queries. You want to minimize service costs. What should you do?
 
-You regularly use prefetch caching with a Data Studio report to visualize the results of BigQuery queries. You want to minimize service costs. What should you do?
 * A. Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and direct the users to view the report only once per business day (24-hour period).
+
 * B. Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is selected for the report.
+
 * C. Set up the report to use the Viewer's credentials to access the underlying data in BigQuery, and also set it up to be a 'view-only' report.
 
 * D. Set up the report to use the Viewer's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is not selected for the report.
 
 ** Correct answer **
 
-B. Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is selected for the report.
+* B. Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is selected for the report.
 
 ** Feedback **
 
-B (Correct Answer) - B is correct because you must set Owner credentials to use the 'enable cache' option in BigQuery. It is also a Google best practice to use the ‘enable cache’ option when the business scenario calls for using prefetch caching.
-A, C, and D are not correct because a cache auto-expires every 12 hours; a prefetch cache is only for data sources that use the Owner's credentials (not the Viewer's credentials).
+* B. (Correct Answer) - B is correct because you must set Owner credentials to use the 'enable cache' option in BigQuery. It is also a Google best practice to use the ‘enable cache’ option when the business scenario calls for using prefetch caching.
 
+* A, C, and D are not correct because a cache auto-expires every 12 hours; a prefetch cache is only for data sources that use the Owner's credentials (not the Viewer's credentials).
 
 How DataStudio caches data
 
 ---
-You want to display aggregate view counts for your YouTube channel data in Data Studio. You want to see the video tiles and view counts summarized over the last 30 days. You also want to segment the data by the Country Code using the fewest possible steps. What should you do?
+> You want to display aggregate view counts for your YouTube channel data in Data Studio. You want to see the video tiles and view counts summarized over the last 30 days. You also want to segment the data by the Country Code using the fewest possible steps. What should you do?
+
 * A. Set up a YouTube data source for your channel data for Data Studio. Set Views as the metric and set Video Title as a report dimension. Set Country Code as a filter.
+
 * B. Set up a YouTube data source for your channel data for Data Studio. Set Views as the metric and set Video Title and Country Code as report dimensions.
+
 * C. Export your YouTube views to Cloud Storage. Set up a Cloud Storage data source for Data Studio. Set Views as the metric and set Video Title as a report dimension. Set Country Code as a filter.
+
 * D. Export your YouTube views to Cloud Storage. Set up a Cloud Storage data source for Data Studio. Set Views as the metric and set Video Title and Country Code as report dimensions.
 
 ** Correct answer **
 
-B. Set up a YouTube data source for your channel data for Data Studio. Set Views as the metric and set Video Title and Country Code as report dimensions.
+* B. Set up a YouTube data source for your channel data for Data Studio. Set Views as the metric and set Video Title and Country Code as report dimensions.
 
 ** Feedback **
 
-B (Correct Answer) - B is correct because there is no need to export; you can use the existing YouTube data source. Country Code is a dimension because it's a string and should be displayed as such, that is, showing all countries, instead of filtering.
-A is not correct because you cannot produce a summarized report that meets your business requirements using the options listed.
+* B (Correct Answer) - B is correct because there is no need to export; you can use the existing YouTube data source. Country Code is a dimension because it's a string and should be displayed as such, that is, showing all countries, instead of filtering.
 
-C and D are not correct because you do not need to export data from YouTube to Cloud Storage; you can simply use the existing YouTube data source.
+* A is not correct because you cannot produce a summarized report that meets your business requirements using the options listed.
+
+* C and D are not correct because you do not need to export data from YouTube to Cloud Storage; you can simply use the existing YouTube data source.
 
 ---
-You created a job which runs daily to import highly sensitive data from an on-premises location to Cloud Storage. You also set up a streaming data insert into Cloud Storage via a Kafka node that is running on a Compute Engine instance. You need to encrypt the data at rest and supply your own encryption key. Your key should not be stored in the Google Cloud. What should you do?
+> You created a job which runs daily to import highly sensitive data from an on-premises location to Cloud Storage. You also set up a streaming data insert into Cloud Storage via a Kafka node that is running on a Compute Engine instance. You need to encrypt the data at rest and supply your own encryption key. Your key should not be stored in the Google Cloud. What should you do?
+
 * A. Create a dedicated service account, and use encryption at rest to reference your data stored in Cloud Storage and Compute Engine data as part of your API service calls.
 
 * B. Upload your own encryption key to Cloud Key Management Service, and use it to encrypt your data in Cloud Storage. Use your uploaded encryption key and reference it as part of your API service calls to encrypt your data in the Kafka node hosted on Compute Engine.
+
 * C. Upload your own encryption key to Cloud Key Management Service, and use it to encrypt your data in your Kafka node hosted on Compute Engine.
+
 * D. Supply your own encryption key, and reference it as part of your API service calls to encrypt your data in Cloud Storage and your Kafka node hosted on Compute Engine.
 
 ** Correct answer **
 
-D. Supply your own encryption key, and reference it as part of your API service calls to encrypt your data in Cloud Storage and your Kafka node hosted on Compute Engine.
+* D. Supply your own encryption key, and reference it as part of your API service calls to encrypt your data in Cloud Storage and your Kafka node hosted on Compute Engine.
+
 ** Feedback **
 
-D (Correct Answer) - D is correct because the scenario requires you to use your own key and also to not store your key on Compute Engine, and also this is a Google recommended practice; see the links below.
-A is not correct because the scenario states that you must supply your own encryption key instead of using one generated by Google Cloud Platform.
+* D. (Correct Answer) - D is correct because the scenario requires you to use your own key and also to not store your key on Compute Engine, and also this is a Google recommended practice; see the links below.
 
-B is not correct because the scenario states that you should use, but not store, your own key with Google Cloud Platform services.
+* A. is not correct because the scenario states that you must supply your own encryption key instead of using one generated by Google Cloud Platform.
 
-C is not correct because it does not meet the scenario requirement to reference, but not store, your own key with Google Cloud Platform services.
+* B. is not correct because the scenario states that you should use, but not store, your own key with Google Cloud Platform services.
 
+* C. is not correct because it does not meet the scenario requirement to reference, but not store, your own key with Google Cloud Platform services.
 
 Default Encryption-at-rest
 
 Encryption-at-rest
 
 ---
-You are working on a project with two compliance requirements. The first requirement states that your developers should be able to see the Google Cloud Platform billing charges for only their own projects. The second requirement states that your finance team members can set budgets and view the current charges for all projects in the organization. The finance team should not be able to view the project contents. You want to set permissions. What should you do?
+> You are working on a project with two compliance requirements. The first requirement states that your developers should be able to see the Google Cloud Platform billing charges for only their own projects. The second requirement states that your finance team members can set budgets and view the current charges for all projects in the organization. The finance team should not be able to view the project contents. You want to set permissions. What should you do?
+
 * A. Add the finance team members to the default IAM Owner role. Add the developers to a custom role that allows them to see their own spend only.
+
 * B. Add the finance team members to the Billing Administrator role for each of the billing accounts that they need to manage. Add the developers to the Viewer role for the Project.
 
 * C. Add the developers and finance managers to the Viewer role for the Project.
+
 * D. Add the finance team to the Viewer role for the Project. Add the developers to the Security Reviewer role for each of the billing accounts.
 
 ** Feedback **
-B (Correct Answer) - B is correct because it uses the principle of least privilege for IAM roles; use the Billing Administrator IAM role for that job function.
-A, C, and D are not correct because is it a Google best practice to use pre-defined IAM roles when they exist and match your business scenario; see the link below.
 
+* B. (Correct Answer) - B is correct because it uses the principle of least privilege for IAM roles; use the Billing Administrator IAM role for that job function.
 
-IAM for Billing
-https://cloud.google.com/iam/docs/job-functions/billing
+* A, C, and D are not correct because is it a Google best practice to use pre-defined IAM roles when they exist and match your business scenario; see the link below.
+
+[IAM for Billing]https://cloud.google.com/iam/docs/job-functions/billing
