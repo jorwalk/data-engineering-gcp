@@ -1,6 +1,6 @@
 # Data Engineer Practice Exam
 
-You are building storage for files for a data pipeline on Google Cloud. You want to support JSON files. The schema of these files will occasionally change. Your analyst teams will use running aggregate ANSI SQL queries on this data. What should you do?
+> You are building storage for files for a data pipeline on Google Cloud. You want to support JSON files. The schema of these files will occasionally change. Your analyst teams will use running aggregate ANSI SQL queries on this data. What should you do?
 
 * A. Use BigQuery for storage. Provide format files for data load. Update the format files as needed.
 
@@ -20,9 +20,9 @@ You are building storage for files for a data pipeline on Google Cloud. You want
 * A. is not correct because you should not provide format files: you can simply turn on the 'Automatically detect' schema changes flag.
 
 * C. and D. are not correct because you should not use Cloud Storage for this scenario: it is cumbersome and doesn't add value.
-
 ---
-Your infrastructure includes two 100-TB enterprise file servers. You need to perform a one-way, one-time migration of this data to the Google Cloud securely. Only users in Germany will access this data. You want to create the most cost-effective solution. What should you do?
+> Your infrastructure includes two 100-TB enterprise file servers. You need to perform a one-way, one-time migration of this data to the Google Cloud securely. Only users in Germany will access this data. You want to create the most cost-effective solution. What should you do?
+
 * A. Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage Regional storage bucket as a final destination.
 
 * B. Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage Multi-Regional bucket as a final destination.
@@ -31,18 +31,19 @@ Your infrastructure includes two 100-TB enterprise file servers. You need to per
 
 * D. Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Multi-Regional storage bucket as a final destination.
 
-** Feedback **
+**Feedback**
 
-A (Correct Answer) - A is correct because you are performing a one-time (rather than an ongoing series) data transfer from on-premises to Google Cloud Platform for users in a single region (Germany). Using a Regional storage bucket will reduce cost and also conform to regulatory requirements.
+* A (Correct Answer) - A is correct because you are performing a one-time (rather than an ongoing series) data transfer from on-premises to Google Cloud Platform for users in a single region (Germany). Using a Regional storage bucket will reduce cost and also conform to regulatory requirements.
 
-B, C, and D are not correct because you should only use Transfer Service for a one-time one-way transfer (C,D) and because you should not use a Multi-Regional storage bucket for users in a single region (B,D). Also, Storage Transfer Service does not work for data stored on-premises.
+* B, C, and D are not correct because you should only use Transfer Service for a one-time one-way transfer (C,D) and because you should not use a Multi-Regional storage bucket for users in a single region (B,D). Also, Storage Transfer Service does not work for data stored on-premises.
 
 [GCS Regional storage for single location access](https://cloud.google.com/storage/docs/storage-classes#regional)
 
 [Google Cloud transfer appliance](https://cloud.google.com/transfer-appliance/docs/introduction)
 
 ---
-Your infrastructure runs on another cloud and includes a set of multi-TB enterprise databases that are backed up nightly both on premises and also to that cloud. You need to create a redundant backup to Google Cloud. You are responsible for performing scheduled monthly disaster recovery drills. You want to create a cost-effective solution. What should you do?
+> Your infrastructure runs on another cloud and includes a set of multi-TB enterprise databases that are backed up nightly both on premises and also to that cloud. You need to create a redundant backup to Google Cloud. You are responsible for performing scheduled monthly disaster recovery drills. You want to create a cost-effective solution. What should you do?
+
 * A. Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage Nearline storage bucket as a final destination.
 
 * B. Use Transfer Appliance to transfer the offsite backup files to a Cloud Storage Coldline bucket as a final destination.
@@ -53,13 +54,13 @@ Your infrastructure runs on another cloud and includes a set of multi-TB enterpr
 
 ** Correct answer **
 
-C. Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Nearline storage bucket as a final destination.
+* C. Use Storage Transfer Service to transfer the offsite backup files to a Cloud Storage Nearline storage bucket as a final destination.
 
 ** Feedback **
 
-C (Correct Answer) - C is correct because you will need to access your backup data monthly to test your disaster recovery process, so you should use a Nearline bucket; also because you will be performing ongoing, regular data transfers, so you should use the storage transfer service.
+* C (Correct Answer) - C is correct because you will need to access your backup data monthly to test your disaster recovery process, so you should use a Nearline bucket; also because you will be performing ongoing, regular data transfers, so you should use the storage transfer service.
 
-A, B, and D are not correct because you should not use Coldline if you want to access the files monthly (B,D) and you should not use Transfer Appliance for repeated data transfers (A,B).
+* A, B, and D are not correct because you should not use Coldline if you want to access the files monthly (B,D) and you should not use Transfer Appliance for repeated data transfers (A,B).
 
 
 [GCS Nearline for once-per-month access](https://cloud.google.com/storage/)
@@ -67,7 +68,7 @@ A, B, and D are not correct because you should not use Coldline if you want to a
 [Google Cloud storage transfer service](https://cloud.google.com/storage/transfer/)
 
 ---
-You are designing a relational data repository on Google Cloud to grow as needed. The data will be transactionally consistent and added from any location in the world. You want to monitor and adjust node count for input traffic, which can spike unpredictably. What should you do?
+> You are designing a relational data repository on Google Cloud to grow as needed. The data will be transactionally consistent and added from any location in the world. You want to monitor and adjust node count for input traffic, which can spike unpredictably. What should you do?
 
 * A. Use Cloud Spanner for storage. Monitor storage usage and increase node count if more than 70% utilized.
 
@@ -79,19 +80,20 @@ You are designing a relational data repository on Google Cloud to grow as needed
 
 ** Feedback **
 
-B (Correct Answer) - B is correct because of the requirement to globally scalable transactions—use Cloud Spanner. CPU utilization is the recommended metric for scaling, per Google best practices, linked below.
+* B (Correct Answer) - B is correct because of the requirement to globally scalable transactions—use Cloud Spanner. CPU utilization is the recommended metric for scaling, per Google best practices, linked below.
 
-A is not correct because you should not use storage utilization as a scaling metric.
+* A is not correct because you should not use storage utilization as a scaling metric.
 
-C, D are not correct because you should not use Cloud Bigtable for this scenario.
+* C, D are not correct because you should not use Cloud Bigtable for this scenario.
 
 
-[monitoring](https://cloud.google.com/spanner/docs/monitoring)
+[spanner monitoring](https://cloud.google.com/spanner/docs/monitoring)
 
 [monitoring instance](https://cloud.google.com/bigtable/docs/monitoring-instance)
 
 ---
-You have 250,000 devices which produce a JSON device status event every 10 seconds. You want to capture this event data for outlier time series analysis. What should you do?
+> You have 250,000 devices which produce a JSON device status event every 10 seconds. You want to capture this event data for outlier time series analysis. What should you do?
+
 * A. Ship the data into BigQuery. Develop a custom application that uses the BigQuery API to query the dataset and displays device outlier data based on your business requirements.
 
 * B. Ship the data into BigQuery. Use the BigQuery console to query the dataset and display device outlier data based on your business requirements.
