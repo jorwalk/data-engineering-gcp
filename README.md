@@ -1,12 +1,24 @@
-https://codelabs.developers.google.com/
+# Google Data Engineering
 
+## Google Developers Codelabs
+Provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, Project Tango, and Google APIs on iOS.
+
+[https://codelabs.developers.google.com/](https://codelabs.developers.google.com/)
+
+### Labs and demos for courses for GCP Training
 https://github.com/GoogleCloudPlatform/training-data-analyst
 
+### In this lab you spin up a virtual machine, configure its security, and access it remotely.
 https://codelabs.developers.google.com/codelabs/cpb100-compute-engine/
-https://codelabs.developers.google.com/codelabs/cpb100-cloud-storage/
-  https://github.com/GoogleCloudPlatform/datalab-samples/blob/master/basemap/earthquakes.ipynb
 
-Setup rentals data in Cloud SQL
+### In this lab you carry out the steps of an ingest-transform-and-publish data pipeline manually.
+https://codelabs.developers.google.com/codelabs/cpb100-cloud-storage/
+
+### Geographic data in Datalab
+This notebook demonstrates how to use Datalab to display the earthquakes that have happened over the past 7 days. The data come from USGS, and we will use the Python module basemap to do the plotting.
+https://github.com/GoogleCloudPlatform/datalab-samples/blob/master/basemap/earthquakes.ipynb
+
+### Setup rentals data in Cloud SQL
 https://codelabs.developers.google.com/codelabs/cpb100-cloud-sql/
 * Create Cloud SQL instance
 * Create database tables by importing .sql files from Cloud Storage
@@ -14,12 +26,12 @@ https://codelabs.developers.google.com/codelabs/cpb100-cloud-sql/
 * Allow access to Cloud SQL
 * Explore the rentals data using SQL statements from CloudShell
 
-Setup rentals data in Cloud SQL
+### Setup rentals data in Cloud SQL
 https://codelabs.developers.google.com/codelabs/cpb100-dataproc/
 * Launch DataprocRun Spark
 * ML jobs using Dataproc
 
-Create ML dataset with BigQuery
+### Create ML dataset with BigQuery
 https://codelabs.developers.google.com/codelabs/cpb100-datalab
 ```
 gcloud compute zones list

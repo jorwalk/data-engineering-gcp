@@ -10,16 +10,16 @@ You are building storage for files for a data pipeline on Google Cloud. You want
 
 * D. Use Cloud Storage for storage. Link data as permanent tables in BigQuery and turn on the "Automatically detect" option in the Schema section of BigQuery.
 
-** Correct answer **
+**Correct answer**
 
-B. Use BigQuery for storage. Select "Automatically detect" in the Schema section.
+* B. Use BigQuery for storage. Select "Automatically detect" in the Schema section.
 
-** Feedback **
-B (Correct Answer) - B is correct because of the requirement to support occasionally (schema) changing JSON files and aggregate ANSI SQL queries: you need to use BigQuery, and it is quickest to use 'Automatically detect' for schema changes.
+**Feedback**
+* B. (Correct Answer) - B is correct because of the requirement to support occasionally (schema) changing JSON files and aggregate ANSI SQL queries: you need to use BigQuery, and it is quickest to use 'Automatically detect' for schema changes.
 
-A is not correct because you should not provide format files: you can simply turn on the 'Automatically detect' schema changes flag.
+* A. is not correct because you should not provide format files: you can simply turn on the 'Automatically detect' schema changes flag.
 
-C and D are not correct because you should not use Cloud Storage for this scenario: it is cumbersome and doesn't add value.
+* C. and D. are not correct because you should not use Cloud Storage for this scenario: it is cumbersome and doesn't add value.
 
 ---
 Your infrastructure includes two 100-TB enterprise file servers. You need to perform a one-way, one-time migration of this data to the Google Cloud securely. Only users in Germany will access this data. You want to create the most cost-effective solution. What should you do?
