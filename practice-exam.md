@@ -103,15 +103,16 @@
 * D. Ship the data into Cloud Bigtable. Install and use the HBase shell for Cloud Bigtable to query the table for device outlier data based on your business requirements.
 
 ** Correct answer **
-C. Ship the data into Cloud Bigtable. Use the Cloud Bigtable cbt tool to display device outlier data based on your business requirements.
+
+* C. Ship the data into Cloud Bigtable. Use the Cloud Bigtable cbt tool to display device outlier data based on your business requirements.
 
 ** Feedback **
 
-C (Correct Answer) - C is correct because the data type, volume, and query pattern best fits BigTable capabilities and also Google best practices as linked below.
+* C. (Correct Answer) - C is correct because the data type, volume, and query pattern best fits BigTable capabilities and also Google best practices as linked below.
 
-A and B are not correct because you do not need to use BigQuery for the query pattern in this scenario.
+* A. and B. are not correct because you do not need to use BigQuery for the query pattern in this scenario.
 
-D is not correct because you can use the simpler method of 'cbt tool' to support this scenario.
+* D. is not correct because you can use the simpler method of 'cbt tool' to support this scenario.
 
 
 [cbt Overview](https://cloud.google.com/bigtable/docs/go/cbt-overview)
@@ -120,7 +121,7 @@ D is not correct because you can use the simpler method of 'cbt tool' to support
 
 ---
 
-You are designing storage for event data as part of building a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of querying individual values over time windows. Which storage service and schema design should you use?
+> You are designing storage for event data as part of building a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of querying individual values over time windows. Which storage service and schema design should you use?
 
 * A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
 
@@ -131,52 +132,66 @@ You are designing storage for event data as part of building a data pipeline on 
 * D. Use Cloud Storage for storage. Write a Cloud Dataprep job to split the data into partitioned tables.
 
 ** Correct answer **
-A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
+
+* A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
+
 ** Feedback **
-A (Correct Answer) - A is correct because it is a recommended Google practice; see the link below. Use Cloud Bigtable and this schema for this scenario.
-B is not correct because you should design tall and narrow tables, not short and wide tables, and also because you should use a new row, not a new column, for this scenario.
 
-C and D are not correct because you do not need to use GCS/BQ for this scenario.
+* A. (Correct Answer) - A is correct because it is a recommended Google practice; see the link below. Use Cloud Bigtable and this schema for this scenario.
+
+* B. is not correct because you should design tall and narrow tables, not short and wide tables, and also because you should use a new row, not a new column, for this scenario.
+
+* C. and D. are not correct because you do not need to use GCS/BQ for this scenario.
 
 
-https://cloud.google.com/bigtable/docs/schema-design-time-series
+[Schema Design Time Series](https://cloud.google.com/bigtable/docs/schema-design-time-series)
 
 ---
-You are selecting a streaming service for log messages that must include final result message ordering as part of building a data pipeline on Google Cloud. You want to stream input for 5 days and be able to query the most recent message value. You will be storing the data in a searchable repository. How should you set up the input messages?
+> You are selecting a streaming service for log messages that must include final result message ordering as part of building a data pipeline on Google Cloud. You want to stream input for 5 days and be able to query the most recent message value. You will be storing the data in a searchable repository. How should you set up the input messages?
+
 * A. Use Cloud Pub/Sub for input. Attach a timestamp to every message in the publisher.
 
 * B. Use Cloud Pub/Sub for input. Attach a unique identifier to every message in the publisher.
+
 * C. Use Apache Kafka on Compute Engine for input. Attach a timestamp to every message in the publisher.
+
 * D. Use Apache Kafka on Compute Engine for input. Attach a unique identifier to every message in the publisher.
 
 ** Feedback **
 
-A (Correct Answer) - A is correct because of recommended Google practices; see the links below.
-B is not correct because you should not attach a GUID to each message to support the scenario.
+* A. (Correct Answer) - A is correct because of recommended Google practices; see the links below.
 
-C and D are not correct because you should not use Apache Kafka for this scenario (it is overly complex compared to using Cloud Pub/Sub, which can support all of the requirements).
+* B. is not correct because you should not attach a GUID to each message to support the scenario.
+
+* C. and D. are not correct because you should not use Apache Kafka for this scenario (it is overly complex compared to using Cloud Pub/Sub, which can support all of the requirements).
 
 
-https://cloud.google.com/pubsub/docs/ordering
+[PubSub Ordering](https://cloud.google.com/pubsub/docs/ordering)
 
 ---
-You are designing storage for CSV files and using an I/O-intensive custom Apache Spark transform as part of deploying a data pipeline on Google Cloud. You are using ANSI SQL to run queries for your analysts. You want to support complex aggregate queries and reuse existing code. How should you transform the input data?
+> You are designing storage for CSV files and using an I/O-intensive custom Apache Spark transform as part of deploying a data pipeline on Google Cloud. You are using ANSI SQL to run queries for your analysts. You want to support complex aggregate queries and reuse existing code. How should you transform the input data?
+
 * A. Use BigQuery for storage. Use Cloud Dataflow to run the transformations.
+
 * B. Use BigQuery for storage. Use Cloud Dataproc to run the transformations.
+
 * C. Use Cloud Storage for storage. Use Cloud Dataflow to run the transformations.
 
 * D. Use Cloud Storage for storage. Use Cloud Dataproc to run the transformations.
 
 ** Correct answer **
-B. Use BigQuery for storage. Use Cloud Dataproc to run the transformations.
+
+* B. Use BigQuery for storage. Use Cloud Dataproc to run the transformations.
 Feedback
-B (Correct Answer) - B is correct because of the requirement to use custom Spark transforms; use Cloud Dataproc. ANSI SQL queries require the use of BigQuery.
-A is not correct because you should not use Cloud Dataflow for this scenario.
 
-C and D are not correct because you should not use Cloud Storage for this scenario, and you should also not use Cloud Dataflow. Instead, you should just add secondary indexes.
+* B. (Correct Answer) - B is correct because of the requirement to use custom Spark transforms; use Cloud Dataproc. ANSI SQL queries require the use of BigQuery.
+
+* A. is not correct because you should not use Cloud Dataflow for this scenario.
+
+* C. and D. are not correct because you should not use Cloud Storage for this scenario, and you should also not use Cloud Dataflow. Instead, you should just add secondary indexes.
 
 
-https://stackoverflow.com/questions/46436794/what-is-the-difference-between-google-cloud-dataflow-and-google-cloud-dataproc
+[Difference between Dataflow and Dataproc](https://stackoverflow.com/questions/46436794/what-is-the-difference-between-google-cloud-dataflow-and-google-cloud-dataproc)
 
 ---
 You are building a data pipeline on Google Cloud. You need to select services that will host a deep neural network machine-learning model also hosted on Google Cloud. You also need to monitor and run jobs that could occasionally fail. What should you do?
