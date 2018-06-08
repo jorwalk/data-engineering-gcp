@@ -143,7 +143,6 @@
 
 * C. and D. are not correct because you do not need to use GCS/BQ for this scenario.
 
-
 [Schema Design Time Series](https://cloud.google.com/bigtable/docs/schema-design-time-series)
 
 ---
