@@ -103,15 +103,16 @@
 * D. Ship the data into Cloud Bigtable. Install and use the HBase shell for Cloud Bigtable to query the table for device outlier data based on your business requirements.
 
 ** Correct answer **
-C. Ship the data into Cloud Bigtable. Use the Cloud Bigtable cbt tool to display device outlier data based on your business requirements.
+
+* C. Ship the data into Cloud Bigtable. Use the Cloud Bigtable cbt tool to display device outlier data based on your business requirements.
 
 ** Feedback **
 
-C (Correct Answer) - C is correct because the data type, volume, and query pattern best fits BigTable capabilities and also Google best practices as linked below.
+* C. (Correct Answer) - C is correct because the data type, volume, and query pattern best fits BigTable capabilities and also Google best practices as linked below.
 
-A and B are not correct because you do not need to use BigQuery for the query pattern in this scenario.
+* A. and B. are not correct because you do not need to use BigQuery for the query pattern in this scenario.
 
-D is not correct because you can use the simpler method of 'cbt tool' to support this scenario.
+* D. is not correct because you can use the simpler method of 'cbt tool' to support this scenario.
 
 
 [cbt Overview](https://cloud.google.com/bigtable/docs/go/cbt-overview)
@@ -120,7 +121,7 @@ D is not correct because you can use the simpler method of 'cbt tool' to support
 
 ---
 
-You are designing storage for event data as part of building a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of querying individual values over time windows. Which storage service and schema design should you use?
+> You are designing storage for event data as part of building a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of querying individual values over time windows. Which storage service and schema design should you use?
 
 * A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
 
@@ -131,15 +132,19 @@ You are designing storage for event data as part of building a data pipeline on 
 * D. Use Cloud Storage for storage. Write a Cloud Dataprep job to split the data into partitioned tables.
 
 ** Correct answer **
-A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
+
+* A. Use Cloud Bigtable for storage. Design tall and narrow tables, and use a new row for each single event version.
+
 ** Feedback **
-A (Correct Answer) - A is correct because it is a recommended Google practice; see the link below. Use Cloud Bigtable and this schema for this scenario.
-B is not correct because you should design tall and narrow tables, not short and wide tables, and also because you should use a new row, not a new column, for this scenario.
 
-C and D are not correct because you do not need to use GCS/BQ for this scenario.
+* A. (Correct Answer) - A is correct because it is a recommended Google practice; see the link below. Use Cloud Bigtable and this schema for this scenario.
+
+* B. is not correct because you should design tall and narrow tables, not short and wide tables, and also because you should use a new row, not a new column, for this scenario.
+
+* C. and D. are not correct because you do not need to use GCS/BQ for this scenario.
 
 
-https://cloud.google.com/bigtable/docs/schema-design-time-series
+[Schema Design Time Series](https://cloud.google.com/bigtable/docs/schema-design-time-series)
 
 ---
 You are selecting a streaming service for log messages that must include final result message ordering as part of building a data pipeline on Google Cloud. You want to stream input for 5 days and be able to query the most recent message value. You will be storing the data in a searchable repository. How should you set up the input messages?
