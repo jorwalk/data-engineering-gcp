@@ -48,3 +48,19 @@
 
 #### Footnotes:
 1. Cloud Spanner was not on the exam. Perhaps it was too new.
+
+## Technical Review from YouTube user
+
+* Case studies were part of the exam and you needed to review and answer the appropriate solutions for the specific questions. Case study had numerous question similar but had a slight question or answer so you needed to pay attention.
+* Cloud DataProc - Questions about migrating onsite Hadoop and how Cloud DataProc could help.
+* Cloud DataFlow - Numerous questions around knowing how Cloud DataFlow fits, know stream verse batch, it's managed service so that you don't need to deal with it, how you can use it for ETL. Lastly, you will see several questions related to how Cloud DataFlow can manage services in Google Cloud Storage and Google Cloud Compute Engine.
+* Pipelines in DataFlow and how you could use graph objects. One question about why you would use JSON or Java related to Pipelines.
+* Storage around every aspect and needed to discern between nearline and Coldline. Big data, regional and standard storage. Cloud storage is a must to know.
+* Hadoop. Numerous questions around HDFS but also when you would need to use approaches like Hive, Spoop, Oozie with Hadoop.
+* Stackdriver - not really what I would call data engineering, but they asked four questions about his Hybrid monitoring service. I remember a few questions focused on how you can debug, monitor and log using Stackdriver. I think they were checking to confirm if you knew how to use Stackdriver to help debug source code, etc.
+* BigTable - numerous questions about why and how you could use BigTable. Know it's a high performance NoSQL database service for large analytical and operational workloads.
+* BigQuery. Tested heavily around data ingestion and availability. Once again they want to confirm you know that it's a fully managed, petabyte scale, low cost enterprise data warehouse for analytics. BigQuery is serverless.
+* Cloud SQL - they wanted to confirm you knew it and why over other services like BigTable, BigQuery, etc.
+* Tensorflow - Several questions also focused on Neural Networks, review this page.
+* CloudLab - which is a powerful interactive tool created to explore, analyze, transform and visualize data and build machine learning models on Google cloud platform. Numerous questions here around how to visualize and create models.
+* Pub/Sub. Numerous questions on Pub/Sub and how you would integrate it with other services, how to use it for publisher apps, messaging, resource types and models.
