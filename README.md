@@ -1,5 +1,12 @@
 # Google Data Engineering
 
+This repository contains a collection of resources that will help a developer prepare
+for the Google Cloud Platform - Data Engineering Certification.
+
+## Conceptual Knowledge Articles
+- [Google Cloud Platform (GCP) services you can use to manage data throughout its entire lifecycle, from initial acquisition to final visualization.](articles/data-lifecycle-cloud-platform.md)
+
+
 ## Google Developers Codelabs
 Provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, Project Tango, and Google APIs on iOS.
 

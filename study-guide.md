@@ -26,6 +26,7 @@
   - [HDFS and extensions](https://cloud.google.com/dataproc/docs/concepts/connectors/cloud-storage)
 - There will be a question on [HIPAA](https://cloud.google.com/security/compliance/hipaa/), [COPPA](https://www.google.com/cloud/security/compliance/coppa/), etc.
 - Read the "Concepts" page for each of the technologies listed in the table.
+- [Migrating On-Premises Hadoop Infrastructure to Google Cloud Platform](https://cloud.google.com/solutions/migration/hadoop/hadoop-gcp-migration-overview)
 
 | Topic	| Theory	| Practice |
 | ------| :------:| :-------:|
