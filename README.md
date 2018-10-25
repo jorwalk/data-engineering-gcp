@@ -18,7 +18,7 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 ## Conceptual Knowledge Articles
 - [Google Cloud Platform (GCP) services you can use to manage data throughout its entire lifecycle, from initial acquisition to final visualization.](articles/data-lifecycle-cloud-platform.md)
-- [Migrating On-Premises Hadoop Infrastructure to Google Cloud Platform](./articles/data-engineering-gcp/articles/hadoop-gcp-migration-overview.md)
+- [Migrating On-Premises Hadoop Infrastructure to Google Cloud Platform](./articles/hadoop-gcp-migration-overview.md)
 - [User Contributed Study Guide](study-guide.md)
 - [Certification Exam Guide](data-engineer-certificate-exam-guide.md)
 
