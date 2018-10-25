@@ -1,4 +1,5 @@
 # Google
+
 ## Professional Data Engineer
 A Professional Data Engineer enables data-driven decision making by collecting, transforming, and visualizing data. The Data Engineer designs, builds, maintains, and troubleshoots data processing systems with a particular emphasis on the security, reliability, fault-tolerance, scalability, fidelity, and efficiency of such systems.
 
@@ -18,12 +19,13 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 ## Conceptual Knowledge Articles
 - [Google Cloud Platform (GCP) services you can use to manage data throughout its entire lifecycle, from initial acquisition to final visualization.](articles/data-lifecycle-cloud-platform.md)
+- [Migrating On-Premises Hadoop Infrastructure to Google Cloud Platform](./articles/data-engineering-gcp/articles/hadoop-gcp-migration-overview.md)
 - [User Contributed Study Guide](study-guide.md)
 - [Certification Exam Guide](data-engineer-certificate-exam-guide.md)
 
 ## Case Studies
 - [Flowlogistic Case Study](./case-study/flowlogistic.md)
-- [MJTelco Case Study Case Study](./case-study/mjtelco.md) 
+- [MJTelco Case Study Case Study](./case-study/mjtelco.md)
 
 
 ## Google Developers Codelabs
