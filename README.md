@@ -1,6 +1,5 @@
-# Google
+# Google - Professional Data Engineer
 
-## Professional Data Engineer
 A Professional Data Engineer enables data-driven decision making by collecting, transforming, and visualizing data. The Data Engineer designs, builds, maintains, and troubleshoots data processing systems with a particular emphasis on the security, reliability, fault-tolerance, scalability, fidelity, and efficiency of such systems.
 
 The Data Engineer also analyzes data to gain insight into business outcomes, builds statistical models to support decision-making, and creates machine learning models to automate and simplify key business processes.
@@ -25,8 +24,7 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 ## Case Studies
 - [Flowlogistic Case Study](./case-study/flowlogistic.md)
-- [MJTelco Case Study Case Study](./case-study/mjtelco.md)
-
+- [MJTelco Case Study](./case-study/mjtelco.md)
 
 ## Google Developers Codelabs
 Provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, Project Tango, and Google APIs on iOS.
