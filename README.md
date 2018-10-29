@@ -26,6 +26,9 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 - [Flowlogistic Case Study](./case-study/flowlogistic.md)
 - [MJTelco Case Study](./case-study/mjtelco.md)
 
+## Need To Know
+- [BigQuery](./know/bigquery.md)
+
 ## Google Developers Codelabs
 Provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, Project Tango, and Google APIs on iOS.
 
