@@ -87,3 +87,98 @@ https://codelabs.developers.google.com/codelabs/cpb100-translate-api/
 - Vision API: https://cloud.google.com/vision/
 - Translate API: https://cloud.google.com/translate/
 - Speech API: https://cloud.google.com/speech/
+
+
+## From around the web
+```
+I took the exam today and there were 50 questions. The notes in the blog helped me to focus my study a lot; thanks!
+
+Here are my revisions as the exam isn’t a beta anymore:
+Cloud Storage and Cloud Datastore – ~2 questions
+Cloud SQL – ~2 questions
+Bigtable – ~8 questions. How to optimize perf or troubleshoot slowdowns. What use cases would fit, etc.
+BigQuery – ~8 questions. Data partitioning techniques, optimizing performance. Sharing data with other orgs. How to give list priv needed to users. How to avoid costly queries. Loading and differences of availability of data for streaming vs. batch.
+Pub/Sub – ~3 questions. Basic knowledge was enough
+Apache Hadoop – ~3 questions that were not GCP knowledge but Hadoop ecosystem knowledge; specifically pig and hive and what scenarios would push you to one or the other
+Cloud Dataflow – ~8 questions. Understand batch and streaming designs. How to integrate with BigQuery and constraints you might have.
+Cloud Dataproc – ~3 questions.
+TensorFlow, Machine Learning, – ~10 questions that were mostly ML domain (and not TensorFlow specific) basically about training. Nothing about the Cloud ML service!
+Cloud DataLab – ~2 questions about visualization, permissions/restricting access, creating dynamic dashboards
+Stackdriver – ~1 question about auditing and viewing who did what in BigQuery
+
+```
+
+```
+I have summarized and would like to post what I have felt after I failed the test. Hope that this will help some ones.
+
+-	The content of the exam covers all the knowledge about Google Cloud Platform (GCP) for Data Engineering, including: Storage (20% of questions), Big Data Processing (35%), Machine Learning (18%), case studies (15%) and others (Hadoop and security about 12%).
+
+-	GCP Storage (20%): Covering knowledge about Cloud Storage, Cloud SQL, Data Store, Big Table and Big Query. To answer these questions, we need to deeply understand in which situation which storage technology is used to give us the best optimal solution. There are some questions related to design schema for Data Store and Big Table.
+
+-	Big Data Processing (35%): Covering knowledge about Big Query, Cloud Dataflow, Cloud Dataproc, Cloud Datalab and Cloud Pub/Sub. There are many questions related to Dataproc and Dataflow in my test. In each question, each choice usually is a combination of some GCP technologies in order to create a solution, then we need to choose which solution is the best suitable (in technically, other solutions may be possible but not the best choice).
+
+-	Machine Learning (18%): Covering knowledge on GCP API (Vision API, Speech API, Natural Language API and Translate API) and Tensorflow. I was a little bit surprised when there were fewer Machine Learning (ML) questions in my test than I expected. Problems and targets of some ML questions are not very clear and I felt vague on selecting the correct answer.
+
+-	Case Studies (15%): There are 2 case studies which are as same as in the GCP website: a logistic Flowlogistic company and a communications hardware MJTelco company. Each case study includes about 4 questions which ask how to transform current technologies of that company to use GCP technologies. We can learn details about these case studies in LinuxAcademy.
+
+-	Others (12%): Covering knowledge on Hadoop, and Security Issues. There are some questions that are out of the scope of the GCP Data Engineering, in my opinion, such as questions on Google Cloud Architect and Encryption technology of Security. In my opinion, these are difficult questions for my because I don't have background and GCP architect. To answer these questions, we need to prepare some knowledge in Google Cloud Architect. One notice is that there are some questions where we need to select multiple choices. For example, we need to select 3 answers from 6 choices. In such of case, the first and second choices are usually easier to select than the last choice.
+```
+
+```
+Introduction
+Priocept consultants have recently been participating in the Google Cloud Platform beta certification exams.  We have been working with Google Cloud Platform for many years – since the original launch of Google App Engine – but the new certification scheme allows us to formalize our consultants’ expertise on the platform.
+
+The “beta” nature of the exams means that our consultants have acted as Google guinea pigs to some degree.  Very little study material or practice questions are available at the moment for the certification exams, and you have to rely on prior practical experience and reading the core documentation.  So this blog article is intended to give an overview of the content for the Certified Data Engineer exam, as taken by our consultants in January 2017.
+
+The Data Engineer certification covers a wide range of subjects including Google Cloud Platform data storage, analytical, machine learning, and data processing products.  Below we have given an overview, product-by-product, of what we were subjected to in the exam.
+
+Cloud Storage and Cloud Datastore
+Surprisingly, these products are not covered much in the exam, perhaps because they are covered more extensively in the Cloud Architect exam.  Just know the basic concepts of each product and when it is appropriate (or not appropriate) to use each product, and you should be fine.
+
+Cloud SQL
+There were surprisingly few questions on this product in the exam.  If you have practical experience using the product, you should be fine to answer any questions that do come up.  As with questions related to other data storage products, be sure to know in what scenarios it is appropriate to use Cloud SQL and when it would be more appropriate to use Datastore, Bigquery, Bigtable, etc.
+
+Bigtable
+This product is covered quite extensively in the exam.  You should at least know the basic concepts of the product, such as how to design an appropriate schema, how to define a suitable row key, whether Bigtable supports transactions and ACID operations, and you should also know (at least approximately) what the size limits for Bigtable are (cell and row size, maximum number of tables, etc).
+
+BigQuery
+Lots of questions on BigQuery in the Data Engineer exam, as expected.  You should know about the basic capabilities of BigQuery and what kind of problem domains it is suitable for.  You should also know about BigQuery security and the level at which security can be applied (project and datastore level, but not table or view level).  Partitioned tables, table wildcard queries (“backtick” syntax), streaming inserts, query planning and data skew are also covered.  You should also have an understanding of the methods available to connect external systems or tools to BigQuery for analytics purposes,  how the BigQuery billing model works, and who gets billed when queries cross project and billing account boundaries.
+
+Pub/Sub
+The exam contains lots of questions on this product, but all reasonably high level so it’s just important to know the basic concepts (topics, subscriptions, push and pull delivery flows, etc).  Most importantly you should know when it is appropriate to introduce Pub/Sub as a messaging layer in an architecture, for a given set of requirements.
+
+Apache Hadoop
+Technically not part of Google Cloud Platform, but there are a few questions around this technology in the exam, since it is the underlying technology for Dataproc.  Expect some questions on what HDFS, Hive, Pig, Oozie or Sqoop are, but basic knowledge on what each technology is and when to use it should be sufficient.
+
+Cloud Dataflow
+Lots of questions on this product, which is not surprising as it is a key area of focus for Google with regard to data processing on Google Cloud Platform.  In addition to knowing the basic capabilities of the product, you will also need to understand concepts like windowing types, triggers, PCollections, etc.
+
+Cloud Dataproc
+Not many questions on this besides the Hadoop questions mentioned above.  Just be sure to understand the differences between Dataproc and Dataflow and when to use one or the other.  Dataflow is typically preferred for a new development, whereas Dataproc would be required if migrating existing on-premise Hadoop or Spark infrastructure to Google Cloud Platform without redevelopment effort.
+
+TensorFlow, Machine Learning, Cloud DataLab
+The exam contains a significant amount of questions on this – more than we were expecting.  Fortunately we have been busy working with TensorFlow and Cloud Datalab at Priocept for a while now.  You should understand all the basic concepts of designing and developing a machine learning solution on TensorFlow, including concepts such data correlation analysis in Datalab, and overfitting and how to correct it.  Detailed TensorFlow or Cloud ML programming knowledge is not required but a good understanding of machine learning design and implementation is important.
+
+Stackdriver
+A surprising numbers of questions on this, given that Stackdriver is more of an “ops” product than a “data engineering” product.  Be sure to know the sub-products of Stackdriver (Debugger, Error Reporting, Alerting, Trace, Logging), what they do and when they should be used.
+
+Conclusion
+The Data Engineer certification exam is a fair assessment of the skills required if you want to be able to demonstrate the ability to work effectively with Google Cloud Platform on analytics, big data, data processing, or machine learning projects.  If you have used the majority of these products already on real-world products, the exam should not present you with too many problems.  If you haven’t yet used some of the products above, then get studying!
+
+If you take the exam and get caught out in any areas that we haven’t covered above, please let us know.
+
+Priocept provides both consultancy and bespoke training services for Google Cloud Platform, so please get in touch if we can help your organisation on your journey towards adopting the platform.
+```
+
+```
+On both times I tried, it was heavy on BigQuery (20-25 questions) and TF/ML (10-15 questions), and spread out among the dataproc, dataflow and pubsub, with a couple of questions about SQL and datastore, and another couple of questions about general sysadmin/dba basic stuff.
+
+All the questions are scenario simulations where you have to choose which option would be the best way to deal with the situation, according to google standards and documentation. Be it choosing the right tech or the right way to configure it.
+
+They focus a lot on BigQuery's interaction with cloud storage and other solutions.
+
+What I didnt do much when studying the last two times was exercises and practicing with the solutions.I focused mainly on the theoretical stuff, and really thought I was doing well on my second try, specially since I was comfortably answering the BigQuery questions. But still failed... :(
+
+I'm focusing on hands-on practice now, and will try one last time on august.
+
+```
