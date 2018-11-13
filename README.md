@@ -24,6 +24,7 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 ## Case Studies
 - [Flowlogistic Case Study](./case-study/flowlogistic.md)
+- [Flowlogistic Video Brief](https://www.youtube.com/watch?v=r_yYDysfB-k)
 - [MJTelco Case Study](./case-study/mjtelco.md)
 
 ## Need To Know
@@ -191,5 +192,5 @@ I'm focusing on hands-on practice now, and will try one last time on august.
 - Reinforcement Learning
 * Access to give Dataflow - you need to ask a consultant to help your
 - developer role
-- Dataflow Developer Role 
+- Dataflow Developer Role
 - service account verse role
