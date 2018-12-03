@@ -8,3 +8,4 @@
 * [BigQuery Best Practices: Controlling Costs](https://cloud.google.com/bigquery/docs/best-practices-costs)
 * [BigQuery Best Practices: Optimizing Storage](https://cloud.google.com/bigquery/docs/best-practices-storage)
 * [Creating an Authorized View in BigQuery](https://cloud.google.com/bigquery/docs/share-access-views)
+* [Improve BigQuery ingestion times 10x by using Avro source format](https://cloud.google.com/blog/products/gcp/improve-bigquery-ingestion-times-10x-by-using-avro-source-format)
