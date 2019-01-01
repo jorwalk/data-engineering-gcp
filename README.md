@@ -16,6 +16,73 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 **This repository contains a collection of resources that will help you prepare.**
 
+## Acquire Hands-On Experience
+Complete a set of self-paced labs around Data Engineering to gain hands-on experience.
+
+### Qwiklabs Quests
+Completion of the following Qwiklabs quests are highly recommended:
+1. Advanced: [Machine Learning APIs](https://google.qwiklabs.com/quests/32?locale=en) (8 labs)
+2. Advanced: [Data Science on the Google Cloud Platform](https://google.qwiklabs.com/quests/43?locale=en) (9 labs)
+3. Advanced: [Scientific Data Processing](https://google.qwiklabs.com/quests/28?locale=en) (7 labs)
+4. Expert: [Google Cloud Solutions II: Data and Machine Learning](https://google.qwiklabs.com/quests/38?locale=en) (10 labs)
+
+### Gain Solution Design Experience
+Review the data engineering solutions at [Google Cloud Solutions](https://cloud.google.com/solutions/) under the categories of
+data processing, data warehousing, analytics and visualization, IoT, etc.
+
+##### A. Data Processing
+- [Data Lifecycle on Google Cloud Platform](https://cloud.google.com/solutions/data-lifecycle-cloud-platform)
+- [Build a Data Lake on Google Cloud Platform](https://cloud.google.com/solutions/build-a-data-lake-on-gcp)
+- [Migrating Hadoop Jobs from On-Premises to Google Cloud Platform](https://cloud.google.com/solutions/migration/hadoop/hadoop-gcp-migration-jobs)
+- [Migrating HDFS Data from On-Premises to Google Cloud Platform](https://cloud.google.com/solutions/migration/hadoop/hadoop-gcp-migration-data)
+- [Architecture: Apache Spark & Hadoop on Google Cloud Platform](https://cloud.google.com/solutions/architecture/hadoop)
+- [Running RStudio® Server on a Cloud Dataproc Cluster](https://cloud.google.com/solutions/running-rstudio-server-on-a-cloud-dataproc-cluster)
+- [Architecture: Complex Event Processing](https://cloud.google.com/solutions/architecture/complex-event-processing)
+
+##### B. Data Warehouse
+- [BigQuery for Data Warehouse Practitioners](https://cloud.google.com/solutions/bigquery-data-warehouse)
+- [Performing ETL from a Relational Database into BigQuery](https://cloud.google.com/solutions/performing-etl-from-relational-database-into-bigquery)
+- [Build a Marketing Data Warehouse on Google Cloud Platform](https://cloud.google.com/solutions/marketing-data-warehouse-on-gcp)
+
+##### C. Business Intelligence (Analytics and Visualization)
+- [Creating an Authorized View in BigQuery](https://cloud.google.com/bigquery/docs/share-access-views)
+- [Architecture: Optimizing Large-Scale Ingestion of Analytics Events and Logs](https://cloud.google.com/solutions/architecture/optimized-large-scale-analytics-ingestion)
+- [Real-Time Data Analysis with Kubernetes, Cloud Pub/Sub, and BigQuery](https://cloud.google.com/solutions/real-time/kubernetes-pubsub-bigquery)
+- [Building a Mobile Gaming Analytics Platform - a Reference Architecture](https://cloud.google.com/solutions/mobile/mobile-gaming-analysis-telemetry)
+- [Creating Custom Interactive Dashboards with Bokeh and BigQuery](https://cloud.google.com/solutions/bokeh-and-bigquery-dashboards)
+- [Visualizing BigQuery Data Using Google Cloud Datalab](https://cloud.google.com/bigquery/docs/visualize-datalab)
+- [Visualizing BigQuery Data Using Google Data Studio](https://cloud.google.com/bigquery/docs/visualize-data-studio)
+
+##### D. Machine Learning
+- [Building a Serverless Machine Learning Model](https://cloud.google.com/solutions/building-a-serverless-ml-model)
+- [Architecture of a Serverless Machine Learning Model](https://cloud.google.com/solutions/architecture-of-a-serverless-ml-model)
+- [Using Cloud Dataflow for Batch Predictions with TensorFlow](https://cloud.google.com/solutions/using-cloud-dataflow-for-batch-predictions-with-tensorflow)
+- [Running R at Scale on Compute Engine](https://cloud.google.com/solutions/running-r-at-scale)
+- [Using Distributed TensorFlow with Cloud ML Engine and Cloud Datalab](https://cloud.google.com/ml-engine/docs/tensorflow/distributed-tensorflow-mnist-cloud-datalab)
+- [Creating an Object Detection Application Using TensorFlow](https://cloud.google.com/solutions/creating-object-detection-application-tensorflow)
+- [Using Machine Learning on Compute Engine to Make Product Recommendations](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
+- [Optical Character Recognition (OCR) Tutorial](https://cloud.google.com/functions/docs/tutorials/ocr)
+- [An Image Search Application that Uses the Cloud Vision API](https://cloud.google.com/solutions/image-search-app-with-cloud-vision)
+- [Considerations for Sensitive Data within Machine Learning Datasets](https://cloud.google.com/solutions/sensitive-data-and-ml-datasets)
+
+##### E. IoT
+- [Overview of Internet of Things](https://cloud.google.com/solutions/iot-overview)
+- [Architecture: Real-Time Stream Processing for IoT](https://cloud.google.com/solutions/architecture/real-time-stream-processing-iot)
+- [Automating IoT Machine Learning: Bridging Cloud and Device Benefits with Cloud ML Engine](https://cloud.google.com/solutions/automating-iot-machine-learning)
+- [Oil and Gas Equipment Monitoring and Analytics](https://cloud.google.com/solutions/oil-and-gas-equipment-monitoring-and-analytics)
+- [Designing a Connected Vehicle Platform on Cloud IoT Core](https://cloud.google.com/solutions/designing-connected-vehicle-platform)
+
+### Review Documentation, Blogs and Whitepapers
+- Review the [Pricing Calculator](https://cloud.google.com/products/calculator/), [Product Pricing](https://cloud.google.com/pricing/), [Cost Comparison Calculator](https://cloud.google.com/pricing/#calculators) and the
+[Always Free Usage Limits](https://cloud.google.com/free/docs/always-free-usage-limits).
+- Read the Google Cloud Platform [security](https://cloud.google.com/security/) whitepapers. For example: [Infrastructure
+Security](https://cloud.google.com/security/infrastructure/design/) and [Encryption at Rest](https://cloud.google.com/security/encryption-at-rest/default-encryption/).
+- Read the [Site Reliability Engineering Book](https://landing.google.com/sre/book/index.html), especially the Chapter 25 (Data Processing
+Pipelines), Chapter 26 (Data Integrity: What You Read Is What You Wrote).
+- Explore the current Google Cloud Platform Marketplace solution offerings.
+- In general, review the [Google Cloud Platform Documentation](https://cloud.google.com/docs/) and the [Google Cloud Platform Blogs](https://cloudplatform.googleblog.com/).
+
+
 ## Conceptual Knowledge Articles
 - [Google Cloud Platform (GCP) services you can use to manage data throughout its entire lifecycle, from initial acquisition to final visualization.](articles/data-lifecycle-cloud-platform.md)
 - [Migrating On-Premises Hadoop Infrastructure to Google Cloud Platform](./articles/hadoop-gcp-migration-overview.md)
