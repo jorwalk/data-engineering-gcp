@@ -53,7 +53,7 @@
 ## Technical Review from YouTube user
 
 * Case studies were part of the exam and you needed to review and answer the appropriate solutions for the specific questions. Case study had numerous question similar but had a slight question or answer so you needed to pay attention.
-* Cloud DataProc - Questions about migrating onsite Hadoop and how Cloud DataProc could help.
+* [DataProc](https://cloud.google.com/dataproc/docs/) - Questions about migrating onsite Hadoop and how Cloud DataProc could help.
 * Cloud DataFlow - Numerous questions around knowing how Cloud DataFlow fits, know stream verse batch, it's managed service so that you don't need to deal with it, how you can use it for ETL. Lastly, you will see several questions related to how Cloud DataFlow can manage services in Google Cloud Storage and Google Cloud Compute Engine.
 * Pipelines in DataFlow and how you could use graph objects. One question about why you would use JSON or Java related to Pipelines.
 * Storage around every aspect and needed to discern between nearline and Coldline. Big data, regional and standard storage. Cloud storage is a must to know.
