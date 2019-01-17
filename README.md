@@ -43,6 +43,7 @@ data processing, data warehousing, analytics and visualization, IoT, etc.
 - [BigQuery for Data Warehouse Practitioners](https://cloud.google.com/solutions/bigquery-data-warehouse)
 - [Performing ETL from a Relational Database into BigQuery](https://cloud.google.com/solutions/performing-etl-from-relational-database-into-bigquery)
 - [Build a Marketing Data Warehouse on Google Cloud Platform](https://cloud.google.com/solutions/marketing-data-warehouse-on-gcp)
+- [Schema Design for Time Series Data](https://cloud.google.com/bigtable/docs/schema-design-time-series)
 
 ##### C. Business Intelligence (Analytics and Visualization)
 - [Creating an Authorized View in BigQuery](https://cloud.google.com/bigquery/docs/share-access-views)
@@ -96,6 +97,7 @@ Pipelines), Chapter 26 (Data Integrity: What You Read Is What You Wrote).
 
 ## Need To Know
 - [BigQuery](./know/bigquery.md)
+- [BigTable](https://cloud.google.com/bigtable/docs/overview)
 
 ## Google Developers Codelabs
 Provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application. They cover a wide range of topics such as Android Wear, Google Compute Engine, Project Tango, and Google APIs on iOS.
