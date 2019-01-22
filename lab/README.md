@@ -30,3 +30,15 @@ In this lab you'll use Google Cloud Composer to automate the transform and load 
 ### [Building an IoT Analytics Pipeline on Google Cloud Platform](https://google.qwiklabs.com/focuses/605?parent=catalog)
 
 This lab shows you how to connect and manage devices using Cloud IoT Core; ingest the steam of information using Cloud Pub/Sub; process the IoT data using Cloud Dataflow; use BigQuery to analyze the IoT data.
+
+### [Working with Google Cloud Dataprep](https://google.qwiklabs.com/focuses/610?parent=catalog)
+
+Cloud Dataprep is Google's self-service data preparation tool. In this lab, you will learn how to use Cloud Dataprep to clean and enrich multiple datasets using a mock use case scenario of customer info and purchase history.
+
+### [Simulating a Data Warehouse in the Cloud Using BigQuery and Dataflow](https://google.qwiklabs.com/focuses/3506?parent=catalog)
+
+In this lab you build several Data Pipelines that will ingest data from the USA Babynames dataset into BigQuery, simulating a batch transformation
+
+### [Predict Visitor Purchases with a Classification Model in BQML](https://google.qwiklabs.com/focuses/1794?parent=catalog)
+
+In this lab you will use a newly available ecommerce dataset to run some typical queries that businesses would want to know about their customers' purchasing habits.
