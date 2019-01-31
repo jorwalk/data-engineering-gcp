@@ -479,6 +479,7 @@ Query OK, 1 row affected (0.04 sec)
 
 ```
 
+
 If you run the query `SELECT * FROM london1;` you will see an additional row added at the bottom of the "london1" table:
 
 ![b067eb36e63b9e68.png](https://gcpstaging-qwiklab-website-prod.s3.amazonaws.com/bundles/assets/79886a6b7c9c43cdeb0353c300b1b9adf7ce98a4393a42d8b9dbb01a18de8cae.png)
