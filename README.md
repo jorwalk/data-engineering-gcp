@@ -16,6 +16,29 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 
 **This repository contains a collection of resources that will help you prepare.**
 
+## Review of tips
+- **TIP 1:** Create your own custom preparation plan using the resources in this course.
+
+- **TIP 2:** Use the Exam Guide outline to help identify what to study.
+
+- **TIP 3:** Product and technology knowledge.
+
+- **TIP 4:** This course has touchstone concepts for self-evaluation, not technical training. Seek training if needed.
+
+- **TIP 5:** Problem solving is the key skill.
+
+- **TIP 6:** Practice evaluating your confidence in your answers.
+
+- **TIP 7:** Practice case evaluation and creating proposed solutions.
+
+- **Tip 8:** Use what you know and what you don't know to identify correct and incorrect answers.
+
+- **Tip 9:** Review or rehearse labs to refresh your experience
+
+- **Tip 10:** Prepare!
+
+**Good luck!!**
+
 ## Acquire Hands-On Experience
 Complete a set of self-paced labs around Data Engineering to gain hands-on experience.
 
