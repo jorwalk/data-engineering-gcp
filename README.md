@@ -20,11 +20,43 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 - **TIP 1:** Create your own custom preparation plan using the resources in this course.
 
 - **TIP 2:** Use the Exam Guide outline to help identify what to study.
+Read through the exam guide outline.
+
+[https://cloud.google.com/certification/guides/data-engineer/](https://cloud.google.com/certification/guides/data-engineer/)
+
+The outline communicates how an authority thinks about and organizes the skills required of a Professional Data Engineer.
+
+Training tends to be organized in a ramp; basic concepts first, building into more complex and difficult concepts later. The Exam Guide is not training. So it is not organized for learning, or by importance, or by process. It is organized according to how a group of experts thinks about the job.
+
+There is no additional information about what any particular line means; no explanation.
+
+TIP - Use the Exam Guide outline to help identify what to study.
+The recommendation is for you to read through each line and think about what it actually means, what do you think it is saying about the job? Then ask yourself if you understand that aspect of the job and if you feel you have the skills required to be successful in that part of the job. If yes -- great. It is an indicator that you are prepared. If no -- take note. You may want to study additionally in that part or develop specific skills for that item in the Exam Guide.
 
 - **TIP 3:** Product and technology knowledge.
+You need to know the basic information about each product that might be covered on the exam.
+
+**You need to know:**
+
+* What it does, why it exists.
+* What is special about its design, for what purpose or purposes was it optimized?
+* When do you use it, and what are the limits or bounds when it is time to consider an alternative?
+* What are the key features of this product or technology?
+* Is there an Open Source alternative? If so, what are the key benefits of the cloud-based service over the Open Source software?
+
+**Which products and technologies**
+
+Training and Certification meet at the JTA -- the Job Task Analysis -- the skills required of the job.
+
+The scope of the exam matches the learning track and specialization in training. So a great place to derive a list of the technologies and products that might be on the exam is to look at all the products and technologies that are covered in the related training. The training might not cover everything. But it is a good place to start.
+
+**Study methods**
+
+Training is great. Digging into the online documentation can be very instructive and covers more detail than can be covered in a class, so documentation tends to have more equal coverage of features, whereas training has to prioritize its time. Getting hands on experience can help you understand a product or technology much better than reading and is the kind of experience a professional in the job would have. So labs can be a great way to prepare.
+
 
 - **TIP 4:** This course has touchstone concepts for self-evaluation, not technical training. Seek training if needed.
-
+https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/supplement/zIKFt/exam-tips-4
 - **TIP 5:** Problem solving is the key skill.
 
 - **TIP 6:** Practice evaluating your confidence in your answers.
@@ -38,6 +70,187 @@ The Google Cloud Certified - Professional Data Engineer exam assesses your abili
 - **Tip 10:** Prepare!
 
 **Good luck!!**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| col 3 is      | right-aligned |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
+
+## Certification Exam Guide
+### Section 1: Designing data processing systems
+**1.1 Designing flexible data representations. Considerations include:**
+https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/8qmyY/data-representations-pipelines-and-processing-infrastructure
+| Exam Outline  | Tips           |
+| ------------- |-------------| 
+| future advances in data technology | Tradeoffs between common formats and efficient formats |
+| changes to business requirements   | Notice business changes that imply possible solution changes      |
+| awareness of current state and how to migrate the design to a future state | What state/format is the data in and for what purpose, and where does it need to go, for what new purpose, and in what new state/format |
+| data modeling | How do data items relate to one another? |
+| trade-offs | JSON, XML, AVRO, CSV, Databases: SQL, NOSQL|
+| distributed systems | Main points: Can the application deal with out-of-order data? Eventual consistency? Can the application handle the overhead and delay of ordering or synchronizing  |
+| schema design | If the data is structured: organized for a purpose. |
+
+
+**1.2 Designing data pipelines. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| future advances in data technology      | right-aligned |
+| changes to business requirements      | centered      |
+| awareness of current state and how to migrate the design to a future state | are neat      |
+| data modeling      | right-aligned |
+| tradeoffs      | right-aligned |
+| system availability      | right-aligned |
+| distributed systems      | right-aligned |
+| schema design      | right-aligned |
+| common sources of error (eg. removing selection bias)      | right-aligned |
+
+
+**1.3 Designing data processing infrastructure. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| future advances in data technology     | right-aligned |
+| changes to business requirements      | centered      |
+| awareness of current state, how to migrate the design to the future state | are neat      |
+| data modeling      | right-aligned |
+| tradeoffs      | right-aligned |
+| system availability      | right-aligned |
+| distributed systems      | right-aligned |
+| schema design      | right-aligned |
+| capacity planning      | right-aligned |
+| different types of architectures: message brokers, message queues, middleware, service-oriented      | right-aligned |
+
+
+### Section 2: Building and maintaining data structures and databases
+**2.1 Building and maintaining flexible data representations**
+
+**2.2 Building and maintaining pipelines. Considerations include:**
+https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/xtSp8/building-and-maintaining-pipelines-and-processing-infrastructure
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| data cleansing     | right-aligned |
+| batch and streaming      | centered      |
+| transformation | are neat      |
+| acquire and import data      | right-aligned |
+| testing and quality control      | right-aligned |
+| connecting to new data sources      | right-aligned |
+
+
+**2.3 Building and maintaining processing infrastructure. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| provisioning resources | right-aligned |
+| monitoring pipelines | centered      |
+| adjusting pipelines | are neat      |
+| testing and quality control | right-aligned |
+
+
+### Section 3: Analyzing data and enabling machine learning
+
+**3.1 Analyzing data. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| data collection and labeling     | right-aligned |
+| data visualization      | centered      |
+| dimensionality reduction | are neat      |
+| data cleaning/normalization | right-aligned |
+| defining success metrics | right-aligned |
+
+
+
+
+**3.2 Machine learning. Considerations include:**
+https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/PlIKe/machine-learning-and-analysis
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| feature selection/engineering | right-aligned |
+| algorithm selection | centered      |
+| debugging a model | are neat      |
+
+
+**3.3 Machine learning model deployment. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| performance/cost optimization | right-aligned |
+| online/dynamic learning | centered      |
+
+### Section 4: Modeling business processes for analysis and optimization
+
+**4.1 Mapping business requirements to data representations. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| working with business users | right-aligned |
+| gathering business requirements | centered      |
+
+**4.2 Optimizing data representations, data infrastructure performance and cost. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| resizing and scaling resources     | right-aligned |
+| data cleansing, distributed systems      | centered      |
+| high performance algorithms | are neat      |
+| common sources of error (eg. removing selection bias) | right-aligned |
+
+### Section 5: Ensuring reliability
+
+**5.1 Performing quality control. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| verification     | right-aligned |
+| building and running test suites      | centered      |
+| pipeline monitoring | are neat      |
+
+
+**5.2 Assessing, troubleshooting, and improving data representations and data processing infrastructure.**
+
+**5.3 Recovering data. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| planning (e.g. fault-tolerance)     | right-aligned |
+| executing (e.g., rerunning failed jobs, performing retrospective re-analysis)      | centered      |
+| stress testing data recovery plans and processes | are neat      |
+
+### Section 6: Visualizing data and advocating policy
+
+**6.1 Building (or selecting) data visualization and reporting tools. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| automation    | right-aligned |
+| decision support  | centered      |
+| data summarization, (e.g, translation up the chain, fidelity, trackability, integrity) | are neat      |
+
+
+**6.2 Advocating policies and publishing data and reports.**
+
+### Section 7: Designing for security and compliance
+
+**7.1 Designing secure data infrastructure and processes. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| Identity and Access Management (IAM) | right-aligned |
+| data security  | centered      |
+| penetration testing | are neat      |
+| Separation of Duties (SoD) | right-aligned |
+| security control | right-aligned |
+
+**7.2 Designing for legal compliance. Considerations include:**
+
+| Exam Outline  | Tips          |
+| ------------- |---------------| 
+| legislation (e.g., Health Insurance Portability and Accountability Act (HIPAA), Children’s Online Privacy Protection Act (COPPA), etc.) | right-aligned |
+| audits  | centered      |
+
 
 ## Acquire Hands-On Experience
 Complete a set of self-paced labs around Data Engineering to gain hands-on experience.
