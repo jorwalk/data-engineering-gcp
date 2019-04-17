@@ -71,16 +71,13 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/s
 
 **Good luck!!**
 
-| Exam Outline  | Tips          |
-| ------------- |---------------| 
-| col 3 is      | right-aligned |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |
 
 ## Certification Exam Guide
 ### Section 1: Designing data processing systems
 **1.1 Designing flexible data representations. Considerations include:**
-https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/8qmyY/data-representations-pipelines-and-processing-infrastructure
+
+- [data-representations-pipelines-and-processing-infrastructure](https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/8qmyY/data-representations-pipelines-and-processing-infrastructure)
+
 | Exam Outline  | Tips           |
 | ------------- |-------------| 
 | future advances in data technology | Tradeoffs between common formats and efficient formats |
@@ -96,56 +93,58 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| future advances in data technology      | right-aligned |
-| changes to business requirements      | centered      |
-| awareness of current state and how to migrate the design to a future state | are neat      |
-| data modeling      | right-aligned |
-| tradeoffs      | right-aligned |
-| system availability      | right-aligned |
-| distributed systems      | right-aligned |
-| schema design      | right-aligned |
-| common sources of error (eg. removing selection bias)      | right-aligned |
+| future advances in data technology      |  |
+| changes to business requirements      |       |
+| awareness of current state and how to migrate the design to a future state |      |
+| data modeling      |  |
+| tradeoffs      |  |
+| system availability      |  |
+| distributed systems      |  |
+| schema design      |  |
+| common sources of error (eg. removing selection bias)      |  |
 
 
 **1.3 Designing data processing infrastructure. Considerations include:**
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| future advances in data technology     | right-aligned |
-| changes to business requirements      | centered      |
-| awareness of current state, how to migrate the design to the future state | are neat      |
-| data modeling      | right-aligned |
-| tradeoffs      | right-aligned |
-| system availability      | right-aligned |
-| distributed systems      | right-aligned |
-| schema design      | right-aligned |
-| capacity planning      | right-aligned |
-| different types of architectures: message brokers, message queues, middleware, service-oriented      | right-aligned |
+| future advances in data technology     |  |
+| changes to business requirements      |       |
+| awareness of current state, how to migrate the design to the future state |      |
+| data modeling      |  |
+| tradeoffs      |  |
+| system availability      |  |
+| distributed systems      |  |
+| schema design      |  |
+| capacity planning      |  |
+| different types of architectures: message brokers, message queues, middleware, service-oriented      |  |
 
 
 ### Section 2: Building and maintaining data structures and databases
 **2.1 Building and maintaining flexible data representations**
 
 **2.2 Building and maintaining pipelines. Considerations include:**
-https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/xtSp8/building-and-maintaining-pipelines-and-processing-infrastructure
+
+- [building-and-maintaining-pipelines-and-processing-infrastructure](https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/lecture/xtSp8/)
+
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| data cleansing     | right-aligned |
-| batch and streaming      | centered      |
-| transformation | are neat      |
-| acquire and import data      | right-aligned |
-| testing and quality control      | right-aligned |
-| connecting to new data sources      | right-aligned |
+| data cleansing     |  |
+| batch and streaming      |       |
+| transformation |       |
+| acquire and import data      |  |
+| testing and quality control      |  |
+| connecting to new data sources      |  |
 
 
 **2.3 Building and maintaining processing infrastructure. Considerations include:**
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| provisioning resources | right-aligned |
-| monitoring pipelines | centered      |
-| adjusting pipelines | are neat      |
-| testing and quality control | right-aligned |
+| provisioning resources |  |
+| monitoring pipelines |       |
+| adjusting pipelines |  |
+| testing and quality control | |
 
 
 ### Section 3: Analyzing data and enabling machine learning
@@ -154,11 +153,11 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| data collection and labeling     | right-aligned |
-| data visualization      | centered      |
-| dimensionality reduction | are neat      |
-| data cleaning/normalization | right-aligned |
-| defining success metrics | right-aligned |
+| data collection and labeling     ||
+| data visualization      |    |
+| dimensionality reduction |    |
+| data cleaning/normalization | |
+| defining success metrics |  |
 
 
 
@@ -168,17 +167,17 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| feature selection/engineering | right-aligned |
-| algorithm selection | centered      |
-| debugging a model | are neat      |
+| feature selection/engineering |  |
+| algorithm selection |       |
+| debugging a model |      |
 
 
 **3.3 Machine learning model deployment. Considerations include:**
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| performance/cost optimization | right-aligned |
-| online/dynamic learning | centered      |
+| performance/cost optimization |  |
+| online/dynamic learning |       |
 
 ### Section 4: Modeling business processes for analysis and optimization
 
@@ -186,17 +185,17 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| working with business users | right-aligned |
-| gathering business requirements | centered      |
+| working with business users |  |
+| gathering business requirements |       |
 
 **4.2 Optimizing data representations, data infrastructure performance and cost. Considerations include:**
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| resizing and scaling resources     | right-aligned |
-| data cleansing, distributed systems      | centered      |
-| high performance algorithms | are neat      |
-| common sources of error (eg. removing selection bias) | right-aligned |
+| resizing and scaling resources     |  |
+| data cleansing, distributed systems      |       |
+| high performance algorithms |     |
+| common sources of error (eg. removing selection bias) |  |
 
 ### Section 5: Ensuring reliability
 
@@ -204,9 +203,9 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| verification     | right-aligned |
-| building and running test suites      | centered      |
-| pipeline monitoring | are neat      |
+| verification     | |
+| building and running test suites      |    |
+| pipeline monitoring |    |
 
 
 **5.2 Assessing, troubleshooting, and improving data representations and data processing infrastructure.**
@@ -215,9 +214,9 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| planning (e.g. fault-tolerance)     | right-aligned |
-| executing (e.g., rerunning failed jobs, performing retrospective re-analysis)      | centered      |
-| stress testing data recovery plans and processes | are neat      |
+| planning (e.g. fault-tolerance)     |  |
+| executing (e.g., rerunning failed jobs, performing retrospective re-analysis)      |       |
+| stress testing data recovery plans and processes |      |
 
 ### Section 6: Visualizing data and advocating policy
 
@@ -225,9 +224,9 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| automation    | right-aligned |
-| decision support  | centered      |
-| data summarization, (e.g, translation up the chain, fidelity, trackability, integrity) | are neat      |
+| automation    |  |
+| decision support  |       |
+| data summarization, (e.g, translation up the chain, fidelity, trackability, integrity) |  |
 
 
 **6.2 Advocating policies and publishing data and reports.**
@@ -238,18 +237,18 @@ https://www.coursera.org/learn/preparing-cloud-professional-data-engineer-exam/l
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| Identity and Access Management (IAM) | right-aligned |
-| data security  | centered      |
-| penetration testing | are neat      |
-| Separation of Duties (SoD) | right-aligned |
-| security control | right-aligned |
+| Identity and Access Management (IAM) | |
+| data security  |       |
+| penetration testing |      |
+| Separation of Duties (SoD) |  |
+| security control |  |
 
 **7.2 Designing for legal compliance. Considerations include:**
 
 | Exam Outline  | Tips          |
 | ------------- |---------------| 
-| legislation (e.g., Health Insurance Portability and Accountability Act (HIPAA), Children’s Online Privacy Protection Act (COPPA), etc.) | right-aligned |
-| audits  | centered      |
+| legislation (e.g., Health Insurance Portability and Accountability Act (HIPAA), Children’s Online Privacy Protection Act (COPPA), etc.) |  |
+| audits  |       |
 
 
 ## Acquire Hands-On Experience
