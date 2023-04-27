@@ -430,3 +430,150 @@ B (Correct Answer) - B is correct because it uses the principle of least privile
 A, C, and D are not correct because is it a Google best practice to use pre-defined IAM roles when they exist and match your business scenario; see the link below.
 
 ---
+
+Three Google Cloud services commonly used together in data engineering solutions. (Described in this course).
+
+Cloud Bigtable, Dataproc, Cloud Spanner
+
+Pub/Sub, Google Kubernetes Engine, Cloud Spanner
+
+Dataproc, Cloud SQL, BigQuery
+check
+Pub/Sub, Dataflow, BigQuery
+Correct. Pub/Sub provides messaging, Dataflow is used for ETL and data transformation, and BigQuery is used for interactive queries.
+
+4.
+
+A company has a new IoT pipeline. Which services will make this design work?
+Select the services that should be used to replace the icons with the number "1" and number "2" in the diagram.
+
+
+App Engine, IoT Core
+check
+IoT Core, Pub/Sub
+
+IoT Core, Datastore
+
+Pub/Sub, Cloud Storage
+This is correct because device data captured by IoT Core gets published to Pub/Sub.
+
+
+6.
+
+Calculate a running average on streaming data that can arrive late and out of order.
+
+Use Dataflow's built-in timestamps for ordering and filtering.
+
+Pub/Sub can guarantee timely arrival and order.
+check
+Use Pub/Sub and Dataflow with Sliding Time Windows.
+
+Use Pub/Sub and Google Data Studio.
+This is correct because together, Pub/Sub and Dataflow can provide a solution.
+
+check
+7.
+
+Cost-effective backup to Google Cloud of multi-TB databases from another cloud including monthly DR drills.
+
+Use Storage Transfer Service. Transfer to Cloud Storage Coldline bucket.
+check
+Use Storage Transfer Service. Transfer to Cloud Storage Nearline bucket.
+
+Use Transfer Appliance. Transfer to Cloud Storage Nearline bucket.
+
+Use Transfer Appliance. Transfer to Cloud Storage Coldline bucket.
+This is correct because you will need to access your backup data monthly to test your disaster recovery process, so you should use a Nearline bucket; also because you will be performing ongoing, regular data transfers, so you should use Storage Transfer Service.
+
+10.
+
+What is AVRO used for?
+
+AVRO is a numerical type in SQL that stores a 38 digit value with 9 digit decimal representation. It avoids rounding errors in financial calculations.
+
+AVRO is a file type usually specified with *.avr and a common format for spreadsheets.
+check
+Serialization and de-serialization of data so that it can be transmitted and stored while maintaining an object structure.
+
+AVRO is an encryption method. AVRO-256 is a 256-bit key standard.
+This is correct. AVRO is a serialization / de-serialization standard.
+
+12.
+
+A client is using Cloud SQL database to serve infrequently changing lookup tables that host data used by applications. The applications will not modify the tables. As they expand into other geographic regions they want to ensure good performance. What do you recommend?
+
+Replicate from an external server
+
+Instance high availability configuration
+
+Migrate to Cloud Spanner
+check
+Read replicas
+This is correct. A read replica will increase the availability of the service and can be located closer to the users in the new geographies.
+
+15.
+
+Host a deep neural network machine learning model on Google Cloud. Run and monitor jobs that could occasionally fail.
+
+Use a Google Kubernetes Engine cluster to host your model. Monitor the status of the Operation object for 'error' results.
+
+Use a Google Kubernetes Engine cluster to host your model. Monitor the status of the Jobs object for 'failed' job states.
+
+Use Vertex AI to host your model. Monitor the status of the Operation object for 'error' results.
+check
+Use Vertex AI to host your model. Monitor the status of the Jobs object for 'failed' job states.
+This is correct because of the requirement to host an ML DNN. Vertex AI for Tensorflow can handle DNNs. Google recommends monitoring Jobs, not Operations.
+
+17.
+
+Customer wants to maintain investment in an existing Apache Spark code data pipeline.
+
+Dataprep
+check
+Dataproc
+
+BigQuery
+
+Dataflow
+This is correct because Dataproc is a managed Hadoop service and runs Apache Spark applications.
+
+18.
+
+A client has been developing a pipeline based on PCollections using local programming techniques and is ready to scale up to production. What should they do?
+
+Import the pipeline into BigQuery.
+
+They should use the local version of runner.
+check
+They should use the Dataflow Cloud Runner.
+
+They should upload the pipeline to Dataproc.
+This is correct. The PCollection indicates it is a Dataflow pipeline. And the Cloud Runner will enable the pipeline to scale to production levels.
+
+
+20.
+
+Event data in CSV format to be queried for individual values over time windows. Which storage and schema to minimize query costs?
+
+Use Cloud Storage. Write a Dataprep job to split the data into partitioned tables.
+
+Use Cloud Storage. Join the raw file data with a BigQuery log table.
+check
+Use Cloud Bigtable. Design tall and narrow tables, and use a new row for each single event version.
+
+Use Cloud Bigtable. Design short and wide tables, and use a new column for each single event version.
+This is correct because it is a recommended best practice. Use Cloud Bigtable and this schema for this scenario. Cloud Storage would have cheaper STORAGE costs than Cloud Bigtable, but we want to <strong>minimize QUERY costs</strong>.
+
+
+23.
+
+You want to minimize costs to run Google Data Studio reports on BigQuery queries by using prefetch caching.
+
+Set up the report to use the Viewer's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is not selected for the report.
+
+Set up the report to use the Viewer's credentials to access the underlying data in BigQuery, and also set it up to be a 'view-only' report.
+
+Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and direct the users to view the report only once per business day (24-hour period).
+check
+Set up the report to use the Owner's credentials to access the underlying data in BigQuery, and verify that the 'Enable cache' checkbox is selected for the report.
+This is correct because you must set Owner credentials to use the 'enable cache' option in BigQuery. It is also a Google best practice to use the ‘enable cache’ option when the business scenario calls for using prefetch caching. 1) Report must use Owner's Credentials. 2) You don't need to tell the users not to use the report, you need to tell the system to use Query and Pre-fetch caching to cut down on BigQuery jobs.
