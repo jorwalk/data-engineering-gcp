@@ -45,7 +45,7 @@
 
 ---
 #### Storage Options Flow Chart
-![Storage Options Flow Chart](https://cloud.google.com/images/storage-options/flowchart.svg?sanitize=true)
+![Storage Options Flow Chart](https://cloud.google.com/static/architecture/images/storage-advisor.svg)
 
 #### Footnotes:
 1. Cloud Spanner was not on the exam. Perhaps it was too new.
