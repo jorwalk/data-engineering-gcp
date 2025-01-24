@@ -6,13 +6,13 @@ The Data Engineer also analyzes data to gain insight into business outcomes, bui
 
 The Google Cloud Certified - Professional Data Engineer exam assesses your ability to:
 
-- Build and maintain data structures and databases
-- Design data processing systems
-- Analyze data and enable machine learning
-- Model business processes for analysis and optimization
-- Design for reliability
-- Visualize data and advocate policy
-- Design for security and compliance
+- Build and maintain data structures and databases.
+- Design data processing systems.
+- Analyze data and enable machine learning.
+- Model business processes for analysis and optimization.
+- Design for reliability.
+- Visualize data and advocate policy.
+- Design for security and compliance.
 
 **This repository contains a collection of resources that will help you prepare.**
 
